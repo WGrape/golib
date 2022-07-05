@@ -13,7 +13,7 @@ jobs:
   The-CI-Flow:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./.github/workflows/deploy/
+      working-directory: ./.deploy/
     steps:
       - run: bash start.sh
         working-directory: ${{env.working-directory}}
