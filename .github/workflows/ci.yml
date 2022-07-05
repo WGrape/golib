@@ -10,7 +10,7 @@ jobs:
   The-CI-Flow:
     runs-on: ubuntu-latest
     steps:
-      - run: bash start.sh
-      - run: bash code_check.sh
-      - run: bash unit_test.sh
-      - run: bash stop.sh
+      - run: bash ../deploy/start.sh
+      - run: bash ../deploy/code_check.sh
+      - run: bash ../deploy/unit_test.sh
+      - run: bash ../deploy/stop.sh
