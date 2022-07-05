@@ -2,7 +2,7 @@
 # curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.46.2
 
 echo -e "------------ The script check_code.sh is running ------------"
-cd ../../ # The base directory
+cd ../../../ # The base directory
 
 # 1、Check the golangci-lint is exist
 which "golangci-lint" >/dev/null 2>&1
