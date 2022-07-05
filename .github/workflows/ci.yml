@@ -1,0 +1,16 @@
+# Example: https://docs.github.com/cn/actions/quickstart
+
+name: The CI Flow
+on:
+  push:
+    branches:
+      - main
+      - testing
+jobs:
+  The-CI-Flow:
+    runs-on: ubuntu-latest
+    steps:
+      - run: bash start.sh
+      - run: bash code_check.sh
+      - run: bash unit_test.sh
+      - run: bash stop.sh
