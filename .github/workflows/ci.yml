@@ -15,6 +15,8 @@ jobs:
     env:
       working-directory: deploy
     steps:
+      - run: echo $(pwd)
+      - run: echo $(ls)
       - run: bash start.sh
         working-directory: ${{env.working-directory}}
       - run: bash .github/deploy/code_check.sh
