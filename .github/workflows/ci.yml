@@ -11,9 +11,11 @@ jobs:
   The-CI-Flow:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $(pwd)
-      - run: echo $(ls)
-      - run: bash /home/runner/work/golib/golib/.github/workflowsdeploy/start.sh
-      - run: bash ./deploy/code_check.sh
-      - run: bash ./deploy/unit_test.sh
-      - run: bash ./deploy/stop.sh
+      - run: bash start.sh
+        working-directory: ./github/workflows/deploy
+      - run: bash code_check.sh
+        working-directory: ./github/workflows/deploy
+      - run: bash unit_test.sh
+        working-directory: ./github/workflows/deploy
+      - run: bash stop.sh
+        working-directory: ./github/workflows/deploy
