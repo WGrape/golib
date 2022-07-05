@@ -1,5 +1,5 @@
 echo -e "------------ The script unit_test.sh is running ------------"
-cd ../../../ # The base directory
+cd ../../ # The base directory
 
 # 1、Test the directory of time
 echo "1. test the directory of time"
