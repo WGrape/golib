@@ -1,4 +1,5 @@
 # Example: https://docs.github.com/cn/actions/quickstart
+# Document: https://docs.github.com/cn/enterprise-server@3.1/actions/using-workflows/workflow-syntax-for-github-actions
 
 name: The CI Flow
 on:
@@ -10,7 +11,7 @@ jobs:
   The-CI-Flow:
     runs-on: ubuntu-latest
     steps:
-      - run: bash ../deploy/start.sh
+      - run: bash /.github/deploy/start.sh
       - run: bash ../deploy/code_check.sh
       - run: bash ../deploy/unit_test.sh
       - run: bash ../deploy/stop.sh
