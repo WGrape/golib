@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: bash start.sh
-        working-directory: ./.github/workflows/deploy
+        working-directory: ./.github/deploy
       - run: bash code_check.sh
-        working-directory: ./.github/workflows/deploy
+        working-directory: ./.github/deploy
       - run: bash unit_test.sh
-        working-directory: ./.github/workflows/deploy
+        working-directory: ./.github/deploy
       - run: bash stop.sh
-        working-directory: ./.github/workflows/deploy
+        working-directory: ./.github/deploy
