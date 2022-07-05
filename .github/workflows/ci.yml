@@ -13,7 +13,7 @@ jobs:
     steps:
       - run: echo $(pwd)
       - run: echo $(ls)
-      - run: bash /home/runner/work/golib/golib/deploy/start.sh
+      - run: bash /home/runner/work/golib/golib/.github/workflowsdeploy/start.sh
       - run: bash ./deploy/code_check.sh
       - run: bash ./deploy/unit_test.sh
       - run: bash ./deploy/stop.sh
