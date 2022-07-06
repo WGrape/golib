@@ -5,14 +5,14 @@
 # https://stackoverflow.com/questions/58139175/running-actions-in-another-directory
 # https://stackoverflow.com/questions/58139175/running-actions-in-another-directory/63122434#63122434
 
-name: The CI Flow
+name: CI
 on:
   push:
     branches:
       - main
       - testing
 jobs:
-  The-CI-Flow:
+  start:
     runs-on: ubuntu-latest
     env:
       working-directory: .github/workflows/deploy
@@ -23,9 +23,30 @@ jobs:
       - run: echo $(pwd)
       - run: bash start.sh
         working-directory: ${{env.working-directory}}
+
+  code_check:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: .github/workflows/deploy
+    steps:
+      - uses: actions/checkout@v1
       - run: bash code_check.sh
         working-directory: ${{env.working-directory}}
-      - run: bash start.sh
-        working-directory: ${{env.working-directory}}
+
+  unit_test:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: .github/workflows/deploy
+    steps:
+      - uses: actions/checkout@v1
       - run: bash unit_test.sh
+        working-directory: ${{env.working-directory}}
+
+  stop:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: .github/workflows/deploy
+    steps:
+      - uses: actions/checkout@v1
+      - run: bash stop.sh
         working-directory: ${{env.working-directory}}
