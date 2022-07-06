@@ -1,7 +1,9 @@
 # Example: https://docs.github.com/cn/actions/quickstart
 # Document: https://docs.github.com/cn/enterprise-server@3.1/actions/using-workflows/workflow-syntax-for-github-actions
 # https://docs.github.com/cn/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
-
+# https://github.community/t/use-working-directory-for-entire-job/16747/2
+# https://stackoverflow.com/questions/58139175/running-actions-in-another-directory
+# https://stackoverflow.com/questions/58139175/running-actions-in-another-directory/63122434#63122434
 
 name: The CI Flow
 on:
