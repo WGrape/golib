@@ -5,7 +5,7 @@
 # https://stackoverflow.com/questions/58139175/running-actions-in-another-directory
 # https://stackoverflow.com/questions/58139175/running-actions-in-another-directory/63122434#63122434
 
-name: CI
+name: build
 on:
   push:
     branches:
