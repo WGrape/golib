@@ -18,7 +18,7 @@
 
 When using the Go language, you may feel that time calculation, file processing, array operations, etc. often require a lot of time and code to complete, which is very inconvenient.
 
-In order to solve this problem, all common complex underlying operations and business operations can be encapsulated into simple and easy-to-use APIs, and the most important thing is that these APIs are unified and standard, and conform to the Go underlying interface specification.
+In order to solve this problem, all common complex underlying operations and business operations can be encapsulated into simple and easy-to-use APIs, and the most important thing is that these APIs are unified and standard, and conform to the Go interface specification.
 
 So the golib project came into being.
 
