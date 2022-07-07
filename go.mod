@@ -1,3 +1,3 @@
-module golib
+module github.com/WGrape/golib
 
 go 1.13

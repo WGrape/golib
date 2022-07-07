@@ -6,6 +6,7 @@
     <img src="https://img.shields.io/badge/go-1.13+-blue.svg">
     <img src="https://github.com/wgrape/golib/actions/workflows/build.yml/badge.svg">
     <img src="https://img.shields.io/badge/Document-中文/English-orange.svg">
+    <a href="https://godoc.org/github.com/WGrape/golib"><img src="https://godoc.org/github.com/WGrape/golib?status.svg" ></a>
     <img src="https://img.shields.io/badge/License-MIT-green.svg">   
 </p>
 
