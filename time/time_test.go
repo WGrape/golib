@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// TestGetCurrentDate tests the GetCurrentDate function.
 func TestGetCurrentDate(t *testing.T) {
 	var layout = "01-02"
 	if GetCurrentDate(layout) != time.Now().Format(layout) {
@@ -25,6 +26,7 @@ func TestGetCurrentDate(t *testing.T) {
 	}
 }
 
+// TestGetCurrentMonth tests the GetCurrentMonth function.
 func TestGetCurrentMonth(t *testing.T) {
 	var layout = "2006-01"
 	if GetCurrentMonth(layout) != time.Now().Format(layout) {
