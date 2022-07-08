@@ -39,4 +39,9 @@ import github.com/WGrape/golib
 golib.API()
 ```
 
-## API list
+## Package list
+
+| package | description                                                                             | api                                                    |
+|---------|-----------------------------------------------------------------------------------------|--------------------------------------------------------|
+| time    | Package time provides functionality for measuring and displaying time more efficiently. | [doc](https://pkg.go.dev/github.com/WGrape/golib/time) |
+

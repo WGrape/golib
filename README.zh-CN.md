@@ -38,4 +38,8 @@ import github.com/WGrape/golib
 golib.API()
 ```
 
-## 接口列表
+## 包列表
+
+| package | description               | api                                                   |
+|---------|---------------------------|-------------------------------------------------------|
+| time    | time包提供了更高效的时间处理操作 | [文档](https://pkg.go.dev/github.com/WGrape/golib/time) |
