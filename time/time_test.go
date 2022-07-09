@@ -20,7 +20,7 @@ var (
 
 // TestGetNowTime test the function GetNowTime.
 func TestGetNowTime(t *testing.T) {
-	if GetNowTime() != sdtime.Now() {
+	if GetNowTime().Format(DefaultLayout) != sdtime.Now().Format(DefaultLayout) {
 		t.Fail()
 	}
 }
@@ -149,8 +149,9 @@ func TestGetEndTime(t *testing.T) {
 		}
 
 		endTime := GetEndTime(startTime, true)
-		if endTime.Unix() > GetNowTimestamp() {
-
+		if endTime.Unix()-GetNowTimestamp() > 86400 {
+			t.Fail()
+			return
 		}
 	}
 }

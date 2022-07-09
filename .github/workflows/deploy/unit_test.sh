@@ -1,5 +1,10 @@
 echo -e "------------ The script unit_test.sh is running ------------"
-cd ../../../ # The base directory
+if [ -n "$1" ]; then
+  cd $1 # The base directory
+else
+  echo "Missed the base directory param."
+  exit 1
+fi
 
 # 1、Test the directory of time
 echo "1. test the directory of time"

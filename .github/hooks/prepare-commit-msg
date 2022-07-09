@@ -1,13 +1,19 @@
 #!/bin/sh
 
+# You need do as follows if you want to use git commit hook.
+# chmod +x .github/hooks/prepare-commit-msg
+# cp .github/hooks/prepare-commit-msg ./.git/hooks
+ROOT_DIR=$(dirname $(dirname $(dirname ${BASH_SOURCE[0]})))
+cd $ROOT_DIR
+
 # Run start
-bash .github/workflows/deploy/start.sh
+bash .github/workflows/deploy/start.sh $ROOT_DIR
 
 # Run code_check
-bash .github/workflows/deploy/code_check.sh
+bash .github/workflows/deploy/code_check.sh $ROOT_DIR
 
 # Run unit_test
-bash .github/workflows/deploy/unit_test.sh
+bash .github/workflows/deploy/unit_test.sh $ROOT_DIR
 
 # Run stop
-bash .github/workflows/deploy/stop.sh
+bash .github/workflows/deploy/stop.sh $ROOT_DIR
