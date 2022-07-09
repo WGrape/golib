@@ -21,7 +21,7 @@ jobs:
       # https://stackoverflow.com/questions/72002229/github-actions-checkoutv3-where-is-repo-downloaded
       - uses: actions/checkout@v1
       - run: echo $(pwd)
-      - run: bash start.sh ${{env.working-directory}}/../../../
+      - run: bash start.sh ./
         working-directory: ${{env.working-directory}}
 
   code_check:
@@ -30,7 +30,7 @@ jobs:
       working-directory: .github/workflows/deploy
     steps:
       - uses: actions/checkout@v1
-      - run: bash code_check.sh ${{env.working-directory}}/../../../
+      - run: bash code_check.sh ./
         working-directory: ${{env.working-directory}}
 
   unit_test:
@@ -39,7 +39,7 @@ jobs:
       working-directory: .github/workflows/deploy
     steps:
       - uses: actions/checkout@v1
-      - run: bash unit_test.sh ${{env.working-directory}}/../../../
+      - run: bash unit_test.sh ./
         working-directory: ${{env.working-directory}}
 
   stop:
@@ -48,5 +48,5 @@ jobs:
       working-directory: .github/workflows/deploy
     steps:
       - uses: actions/checkout@v1
-      - run: bash stop.sh ${{env.working-directory}}/../../../
+      - run: bash stop.sh ./
         working-directory: ${{env.working-directory}}
