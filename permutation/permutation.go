@@ -10,7 +10,9 @@ import (
 )
 
 // resultList is an array of all results.
-var resultList [][]string
+var (
+	resultList [][]string
+)
 
 // generate will find out all combinations and fill them into the resultList
 func generate(start int, targetLen int, nums []string, tmpArray []string) {
