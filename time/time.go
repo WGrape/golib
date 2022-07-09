@@ -9,20 +9,62 @@ import (
 	sdtime "time"
 )
 
+// Default constants
+const (
+	DefaultLayout      = "2006-01-02 15:04:05"
+	DefaultDateLayout  = "2006-01-02"
+	DefaultMonthLayout = "2006-01"
+	DefaultTimeLayout  = "15:04:05"
+	DefaultDayLayout   = "01-02"
+)
+
+// location variables
+var (
+	location = sdtime.Now().Location()
+)
+
+// GetNowTime returns current time.
+func GetNowTime() sdtime.Time {
+	return sdtime.Now()
+}
+
+// GetNowTimestamp returns current timestamp.
+func GetNowTimestamp() int64 {
+	return GetNowTime().Unix()
+}
+
 // GetCurrentMonth returns current month with different time layouts,
 // such as 200601, 2006-01, 01, etc. The Default time layout is 2006-01.
 func GetCurrentMonth(layout string) string {
 	if layout == "" {
-		layout = "2006-01"
+		layout = DefaultMonthLayout
 	}
 	return sdtime.Now().Format(layout)
 }
 
 // GetCurrentDate returns current date with different layouts,
-// such as 01-02, 0102, 2006-01-02, etc. The Default time layout is 01-02.
+// such as 01-02, 0102, 2006-01-02, etc. The Default time layout is 2006-01-02.
 func GetCurrentDate(layout string) string {
 	if layout == "" {
-		layout = "01-02"
+		layout = DefaultDateLayout
 	}
 	return sdtime.Now().Format(layout)
+}
+
+// GetStartTime returns the start time of month.
+func GetStartTime(month string, layout string) (sdtime.Time, error) {
+	startTime, err := sdtime.ParseInLocation(layout, month, location)
+	if err != nil {
+		return startTime, err
+	}
+	return startTime.AddDate(0, 0, -startTime.Day()+1), nil
+}
+
+// GetEndTime returns the end time of month. The second param soFar is true means the return result is not greater than today.
+func GetEndTime(startTime sdtime.Time, soFar bool) sdtime.Time {
+	endTime := sdtime.Date(startTime.Year(), startTime.Month(), startTime.Day(), 0, 0, 0, 0, location).AddDate(0, 1, -1).Add(86399 * sdtime.Second)
+	if soFar && endTime.Unix() >= GetNowTimestamp() {
+		endTime = sdtime.Date(sdtime.Now().Year(), sdtime.Now().Month(), sdtime.Now().Day(), 0, 0, 0, 0, location).Add(86399 * sdtime.Second)
+	}
+	return endTime
 }

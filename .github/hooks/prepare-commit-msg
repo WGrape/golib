@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Run start
+bash .github/workflows/deploy/start.sh
+
+# Run code_check
+bash .github/workflows/deploy/code_check.sh
+
+# Run unit_test
+bash .github/workflows/deploy/unit_test.sh
+
+# Run stop
+bash .github/workflows/deploy/stop.sh
