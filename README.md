@@ -23,25 +23,46 @@ In order to solve this problem, all common complex underlying operations and bus
 
 So the golib project came into being.
 
-## Install
-Using ```go get``` or mod to download dependencies.
+## Download
+Using ```go get``` or ```go mod``` the two ways to download this project. It is recommended to download the latest version.
 
+### go get
 ```bash
-go get github.com/WGrape/golib
+go get github.com/WGrape/golibt@latest
+```
+
+### go mod
+If you put the word latest in place of the tag in the ```go.mod``` file it will get changed to the latest tag the modules.
+
+```mod
+module XXX
+
+go 1.16
+
+require (
+    github.com/WGrape/golib latest
+)
+
 ```
 
 ## Usage
-After the download and installation are successful, you can call the ```golib API``` normally.
+After the download and import are successful, you can call the ```golib package``` as follows.
+
+> The code is from [matching](https://github.com/WGrape/matching/blob/main/pkg/strategy/strategy.go) project.
 
 ```go
-import github.com/WGrape/golib
+import "github.com/WGrape/golib/permutation"
 
-golib.API()
+// getCombinationList get the combination list of properties
+func (strategy *UseStrategy) getCombinationList(propertyList []string) []string {
+    return permutation.GetCombinationsWithImplode(propertyList, ";")
+}
 ```
 
 ## Package list
 
-| package | description                                                                             | api                                                    |
-|---------|-----------------------------------------------------------------------------------------|--------------------------------------------------------|
-| time    | Package time provides functionality for measuring and displaying time more efficiently. | [doc](https://pkg.go.dev/github.com/WGrape/golib/time) |
-
+| package | description                                                                             | api                                                     |
+|---------|-----------------------------------------------------------------------------------------|---------------------------------------------------------|
+| time    | Package time provides functionality for measuring and displaying time more efficiently. | [doc](https://pkg.go.dev/github.com/WGrape/golib/time)  |
+ | array | Package array provides functionality for measuring and displaying array more efficiently. | [doc](https://pkg.go.dev/github.com/WGrape/golib/array) |
+| permutation | Package permutation provides many algorithms about permutation and combination. | [doc](https://pkg.go.dev/github.com/WGrape/golib/permutation) |

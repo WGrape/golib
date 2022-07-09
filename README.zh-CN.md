@@ -22,24 +22,47 @@
 
 因此golib项目应运而生。
 
-## 安装
-使用go get或mod的方式下载依赖
+## 下载
+使用go get或mod这两种方式下载此项目即可，建议下载最新版本。
 
+### go get
 ```bash
-go get github.com/WGrape/golib
+go get github.com/WGrape/golibt@latest
 ```
 
+### go mod
+如果在```go.mod```文件中使用```latest```作为版本，那么在使用```go tidy```等命令下载时，会自动替换为最新的版本号。
+
+```mod
+module XXX
+
+go 1.16
+
+require (
+    github.com/WGrape/golib latest
+)
+
+```
+
+
 ## 使用
-下载安装成功后，正常调用```golib API```即可
+下载导入成功后，像如下例子一样正常调用```golib package```即可
+
+> 代码来自于 [matching](https://github.com/WGrape/matching/blob/main/pkg/strategy/strategy.go) 项目
 
 ```go
-import github.com/WGrape/golib
+import "github.com/WGrape/golib/permutation"
 
-golib.API()
+// getCombinationList get the combination list of properties
+func (strategy *UseStrategy) getCombinationList(propertyList []string) []string {
+    return permutation.GetCombinationsWithImplode(propertyList, ";")
+}
 ```
 
 ## 包列表
 
-| package | description               | api                                                   |
-|---------|---------------------------|-------------------------------------------------------|
-| time    | time包提供了更高效的时间处理操作 | [文档](https://pkg.go.dev/github.com/WGrape/golib/time) |
+| package | description                | api                                                          |
+|---------|----------------------------|--------------------------------------------------------------|
+| time    | time包提供了更高效的时间处理操作         | [文档](https://pkg.go.dev/github.com/WGrape/golib/time)        |
+| array    | array包提供了更高效的数组操作          | [文档](https://pkg.go.dev/github.com/WGrape/golib/array)       |
+| permutation | permutation包提供了排列组合算法相关的操作 | [文档](https://pkg.go.dev/github.com/WGrape/golib/permutation) |
