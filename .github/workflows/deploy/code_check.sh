@@ -3,7 +3,10 @@
 
 echo -e "------------ The script check_code.sh is running ------------"
 if [ -n "$1" ]; then
-  cd $1 # The base directory
+  noBaseDir="--noBaseDir"
+  if [ "$1" != "$noBaseDir" ]; then
+    cd $1 # The base directory
+  fi
 else
   echo "Missed the base directory param."
   exit 1
