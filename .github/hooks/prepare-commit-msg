@@ -7,13 +7,13 @@ ROOT_DIR=$(dirname $(dirname $(dirname ${BASH_SOURCE[0]})))
 cd $ROOT_DIR
 
 # Run start
-bash .github/workflows/deploy/start.sh $ROOT_DIR
+bash .github/workflows/deploy/start.sh $ROOT_DIR &&
 
 # Run code_check
-bash .github/workflows/deploy/code_check.sh $ROOT_DIR
+bash .github/workflows/deploy/code_check.sh $ROOT_DIR &&
 
 # Run unit_test
-bash .github/workflows/deploy/unit_test.sh $ROOT_DIR
+bash .github/workflows/deploy/unit_test.sh $ROOT_DIR &&
 
 # Run stop
 bash .github/workflows/deploy/stop.sh $ROOT_DIR

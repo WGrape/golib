@@ -106,7 +106,7 @@ func TestGetEndTime(t *testing.T) {
 		endTime := GetEndTime(startTime, false)
 
 		// the 1, 3, 5, 7, 8, 10, 12 month have 31 days.
-		if array.InInts([]int{1, 3, 5, 7, 8, 10, 12}, int(endTime.Month())) {
+		if array.SearchInt([]int{1, 3, 5, 7, 8, 10, 12}, int(endTime.Month())) > 0 {
 			result := endTime.Format(DefaultDateLayout)
 			if result != month+"-31" {
 				t.Fail()
@@ -130,7 +130,7 @@ func TestGetEndTime(t *testing.T) {
 		}
 
 		// the 4, 6, 9, 11 month have 31 days.
-		if array.InInts([]int{4, 6, 9, 11}, int(endTime.Month())) {
+		if array.SearchInt([]int{4, 6, 9, 11}, int(endTime.Month())) > 0 {
 			result := endTime.Format(DefaultDateLayout)
 			if result != month+"-30" {
 				t.Fail()
