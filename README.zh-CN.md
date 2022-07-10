@@ -1,14 +1,14 @@
-<p align="center">
+<div align="center">
 <img width="250" src="https://user-images.githubusercontent.com/35942268/177622393-c67a9433-eb2b-4de3-a8e9-262d4db48565.png">
-</p>
+</div>
 
-<p align="center">
+<div align="center">
     <img src="https://img.shields.io/badge/go-1.13+-blue.svg">
     <img src="https://github.com/wgrape/golib/actions/workflows/build.yml/badge.svg">
     <img src="https://img.shields.io/badge/Document-中文/English-orange.svg">
     <a href="https://godoc.org/github.com/WGrape/golib"><img src="https://godoc.org/github.com/WGrape/golib?status.svg" ></a>
     <img src="https://img.shields.io/badge/License-MIT-green.svg">   
-</p>
+</div>
 
 <div align="center">    
     <p>一个简单易用的Go语言封装库</p>

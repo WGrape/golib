@@ -5,24 +5,114 @@
 // Package array provides functionality for measuring and displaying array more efficiently.
 package array
 
-// InStrings return bool means the value is exists in the target string array or not.
-func InStrings(arr []string, value string) bool {
-	for _, v := range arr {
+// SearchString search the value in the string array and return index or return -1.
+func SearchString(arr []string, value string) int {
+	for index, v := range arr {
 		if v == value {
-			return true
+			return index
 		}
 	}
-	return false
+	return -1
 }
 
-// InInts return bool means the value is exists in the target int array or not.
-func InInts(arr []int, value int) bool {
-	for _, v := range arr {
+// SearchInt search the value in the int array and return index or return -1.
+func SearchInt(arr []int, value int) int {
+	for index, v := range arr {
 		if v == value {
-			return true
+			return index
 		}
 	}
-	return false
+	return -1
+}
+
+// SearchUInt search the value in the int array and return index or return -1.
+func SearchUInt(arr []uint, value uint) int {
+	for index, v := range arr {
+		if v == value {
+			return index
+		}
+	}
+	return -1
+}
+
+// SearchInt64 search the value in the int64 array and return index or return -1.
+func SearchInt64(arr []int64, value int64) int {
+	for index, v := range arr {
+		if v == value {
+			return index
+		}
+	}
+	return -1
+}
+
+// SearchUInt64 search the value in the uint64 array and return index or return -1.
+func SearchUInt64(arr []uint64, value uint64) int {
+	for index, v := range arr {
+		if v == value {
+			return index
+		}
+	}
+	return -1
+}
+
+// SearchInt32 search the value in the int32 array and return index or return -1.
+func SearchInt32(arr []int32, value int32) int {
+	for index, v := range arr {
+		if v == value {
+			return index
+		}
+	}
+	return -1
+}
+
+// SearchUInt32 search the value in the uint32 array and return index or return -1.
+func SearchUInt32(arr []uint32, value uint32) int {
+	for index, v := range arr {
+		if v == value {
+			return index
+		}
+	}
+	return -1
+}
+
+// SearchInt16 search the value in the int16 array and return index or return -1.
+func SearchInt16(arr []int16, value int16) int {
+	for index, v := range arr {
+		if v == value {
+			return index
+		}
+	}
+	return -1
+}
+
+// SearchUInt16 search the value in the uint16 array and return index or return -1.
+func SearchUInt16(arr []uint16, value uint16) int {
+	for index, v := range arr {
+		if v == value {
+			return index
+		}
+	}
+	return -1
+}
+
+// SearchInt8 search the value in the int8 array and return index or return -1.
+func SearchInt8(arr []int8, value int8) int {
+	for index, v := range arr {
+		if v == value {
+			return index
+		}
+	}
+	return -1
+}
+
+// SearchUInt8 search the value in the uint8 array and return index or return -1.
+func SearchUInt8(arr []uint8, value uint8) int {
+	for index, v := range arr {
+		if v == value {
+			return index
+		}
+	}
+	return -1
 }
 
 // IsStringsEqual return bool means the two arrays are equal or not.
