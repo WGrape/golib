@@ -5,6 +5,11 @@
 // Package array provides functionality for measuring and displaying array more efficiently.
 package array
 
+import (
+	"math/rand"
+	"time"
+)
+
 // SearchString search the value in the string array and return index or return -1.
 func SearchString(arr []string, value string) int {
 	for index, v := range arr {
@@ -113,6 +118,66 @@ func SearchUInt8(arr []uint8, value uint8) int {
 		}
 	}
 	return -1
+}
+
+// ShuffleIntSlice shuffle an int slice randomly.
+func ShuffleIntSlice(s []int) {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(s), func(i, j int) { s[i], s[j] = s[j], s[i] })
+}
+
+// ShuffleUIntSlice shuffle an uint slice randomly.
+func ShuffleUIntSlice(s []uint) {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(s), func(i, j int) { s[i], s[j] = s[j], s[i] })
+}
+
+// ShuffleInt64Slice shuffle an int64 slice randomly.
+func ShuffleInt64Slice(s []int64) {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(s), func(i, j int) { s[i], s[j] = s[j], s[i] })
+}
+
+// ShuffleUInt64Slice shuffle an uint64 slice randomly.
+func ShuffleUInt64Slice(s []uint64) {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(s), func(i, j int) { s[i], s[j] = s[j], s[i] })
+}
+
+// ShuffleInt32Slice shuffle an int32 slice randomly.
+func ShuffleInt32Slice(s []int32) {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(s), func(i, j int) { s[i], s[j] = s[j], s[i] })
+}
+
+// ShuffleUInt32Slice shuffle an uint32 slice randomly.
+func ShuffleUInt32Slice(s []uint32) {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(s), func(i, j int) { s[i], s[j] = s[j], s[i] })
+}
+
+// ShuffleInt16Slice shuffle an int16 slice randomly.
+func ShuffleInt16Slice(s []int16) {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(s), func(i, j int) { s[i], s[j] = s[j], s[i] })
+}
+
+// ShuffleUInt16Slice shuffle an uint16 slice randomly.
+func ShuffleUInt16Slice(s []uint16) {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(s), func(i, j int) { s[i], s[j] = s[j], s[i] })
+}
+
+// ShuffleInt8Slice shuffle an int8 slice randomly.
+func ShuffleInt8Slice(s []int8) {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(s), func(i, j int) { s[i], s[j] = s[j], s[i] })
+}
+
+// ShuffleUInt8Slice shuffle an uint8 slice randomly.
+func ShuffleUInt8Slice(s []uint8) {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(s), func(i, j int) { s[i], s[j] = s[j], s[i] })
 }
 
 // IsStringsEqual return bool means the two arrays are equal or not.

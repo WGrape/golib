@@ -61,8 +61,9 @@ func (strategy *UseStrategy) getCombinationList(propertyList []string) []string 
 
 ## Package list
 
-| package | description                                                                             | api                                                     |
-|---------|-----------------------------------------------------------------------------------------|---------------------------------------------------------|
-| time    | Package time provides functionality for measuring and displaying time more efficiently. | [doc](https://pkg.go.dev/github.com/WGrape/golib/time)  |
- | array | Package array provides functionality for measuring and displaying array more efficiently. | [doc](https://pkg.go.dev/github.com/WGrape/golib/array) |
-| permutation | Package permutation provides many algorithms about permutation and combination. | [doc](https://pkg.go.dev/github.com/WGrape/golib/permutation) |
+| package | description                                                                               | api                                                                    |
+|---------|-------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| time    | Package time provides functionality for measuring and displaying time more efficiently.   | [document](https://pkg.go.dev/github.com/WGrape/golib/time)                 |
+ | array | Package array provides functionality for measuring and displaying array more efficiently. | [document](https://pkg.go.dev/github.com/WGrape/golib/array)                |
+| permutation | Package permutation provides many algorithms about permutation and combination.           | [document](https://pkg.go.dev/github.com/WGrape/golib/permutation)          |
+ | desensitization | Package desensitization provides data desensitization support.                            | [document](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |

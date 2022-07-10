@@ -1,6 +1,9 @@
 package array
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 // TestSearchString test the function SearchString
 func TestSearchString(t *testing.T) {
@@ -99,4 +102,10 @@ func TestIsStringsEqual(t *testing.T) {
 		t.Fail()
 		return
 	}
+}
+
+func TestShuffleIntSlice(t *testing.T) {
+	var s = []int{1, 9, 6, 3, 5, 2}
+	ShuffleIntSlice(s)
+	fmt.Println(s)
 }
