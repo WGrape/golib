@@ -51,8 +51,26 @@ func GetCurrentDate(layout string) string {
 	return sdtime.Now().Format(layout)
 }
 
-// GetStartTime returns the start time of month.
-func GetStartTime(month string, layout string) (sdtime.Time, error) {
+// GetDayStartTime returns the start time of day.
+func GetDayStartTime(date string, layout string) (sdtime.Time, error) {
+	startTime, err := sdtime.ParseInLocation(layout, date, location)
+	if err != nil {
+		return startTime, err
+	}
+	return startTime.AddDate(0, 0, 1), nil
+}
+
+// GetDayEndTime returns the end time of day.
+func GetDayEndTime(date string, layout string) (sdtime.Time, error) {
+	startTime, err := GetDayStartTime(date, layout)
+	if err != nil {
+		return startTime, err
+	}
+	return startTime.Add(86399 * sdtime.Second), nil
+}
+
+// GetMonthStartTime returns the start time of month.
+func GetMonthStartTime(month string, layout string) (sdtime.Time, error) {
 	startTime, err := sdtime.ParseInLocation(layout, month, location)
 	if err != nil {
 		return startTime, err
@@ -60,8 +78,8 @@ func GetStartTime(month string, layout string) (sdtime.Time, error) {
 	return startTime.AddDate(0, 0, -startTime.Day()+1), nil
 }
 
-// GetEndTime returns the end time of month. The second param soFar is true means the return result is not greater than today.
-func GetEndTime(startTime sdtime.Time, soFar bool) sdtime.Time {
+// GetMonthEndTime returns the end time of month. The second param soFar is true means the return result is not greater than today.
+func GetMonthEndTime(startTime sdtime.Time, soFar bool) sdtime.Time {
 	endTime := sdtime.Date(startTime.Year(), startTime.Month(), startTime.Day(), 0, 0, 0, 0, location).AddDate(0, 1, -1).Add(86399 * sdtime.Second)
 	if soFar && endTime.Unix() >= GetNowTimestamp() {
 		endTime = sdtime.Date(sdtime.Now().Year(), sdtime.Now().Month(), sdtime.Now().Day(), 0, 0, 0, 0, location).Add(86399 * sdtime.Second)

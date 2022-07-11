@@ -32,27 +32,6 @@ func TestGetNowTimestamp(t *testing.T) {
 	}
 }
 
-// TestGetCurrentDate tests the GetCurrentDate function.
-func TestGetCurrentDate(t *testing.T) {
-	var layout = "01-02"
-	if GetCurrentDate(layout) != GetNowTime().Format(layout) {
-		t.Fail()
-		return
-	}
-
-	layout = "0102"
-	if GetCurrentDate(layout) != GetNowTime().Format(layout) {
-		t.Fail()
-		return
-	}
-
-	layout = "2006-01-02"
-	if GetCurrentDate(layout) != GetNowTime().Format(layout) {
-		t.Fail()
-		return
-	}
-}
-
 // TestGetCurrentMonth tests the GetCurrentMonth function.
 func TestGetCurrentMonth(t *testing.T) {
 	var layout = "2006-01"
@@ -74,10 +53,97 @@ func TestGetCurrentMonth(t *testing.T) {
 	}
 }
 
-// TestGetStartTime tests the GetStartTime function.
-func TestGetStartTime(t *testing.T) {
+// TestGetCurrentDate tests the GetCurrentDate function.
+func TestGetCurrentDate(t *testing.T) {
+	var layout = "01-02"
+	if GetCurrentDate(layout) != GetNowTime().Format(layout) {
+		t.Fail()
+		return
+	}
+
+	layout = "0102"
+	if GetCurrentDate(layout) != GetNowTime().Format(layout) {
+		t.Fail()
+		return
+	}
+
+	layout = "2006-01-02"
+	if GetCurrentDate(layout) != GetNowTime().Format(layout) {
+		t.Fail()
+		return
+	}
+}
+
+// TestGetDayStartTime tests the GetDayStartTime function
+func TestGetDayStartTime(t *testing.T) {
+	for _, date := range []string{"20240229", "20220720", "20220730", "20220731"} {
+		startTime, err := GetDayStartTime(date, "20060102")
+		if err != nil {
+			t.Fail()
+			return
+		}
+
+		var (
+			result    = startTime.Format("2006-01-02 15:04:05")
+			timestamp = startTime.Unix()
+		)
+		if date == "20240229" && result != "2024-03-01 00:00:00" && timestamp != 1709222400 {
+			t.Fail()
+			return
+		}
+		if date == "20220720" && result != "2022-07-21 00:00:00" && timestamp != 1658332800 {
+			t.Fail()
+			return
+		}
+		if date == "20220730" && result != "2022-07-31 00:00:00" && timestamp != 1659196800 {
+			t.Fail()
+			return
+		}
+		if date == "20220731" && result != "2022-08-01 00:00:00" && timestamp != 1659283200 {
+			t.Fail()
+			return
+		}
+		t.Logf("%s, %d test success\n", result, timestamp)
+	}
+}
+
+// TestGetDayEndTime tests the GetDayEndTime function
+func TestGetDayEndTime(t *testing.T) {
+	for _, date := range []string{"20240229", "20220720", "20220730", "20220731"} {
+		startTime, err := GetDayEndTime(date, "20060102")
+		if err != nil {
+			t.Fail()
+			return
+		}
+
+		var (
+			result    = startTime.Format("2006-01-02 15:04:05")
+			timestamp = startTime.Unix()
+		)
+		if date == "20240229" && result != "2024-03-01 23:59:59" && timestamp != 1709308799 {
+			t.Fail()
+			return
+		}
+		if date == "20220720" && result != "2022-07-21 23:59:59" && timestamp != 1658419199 {
+			t.Fail()
+			return
+		}
+		if date == "20220730" && result != "2022-07-31 23:59:59" && timestamp != 1659283199 {
+			t.Fail()
+			return
+		}
+		if date == "20220731" && result != "2022-08-01 23:59:59" && timestamp != 1659369599 {
+			t.Fail()
+			return
+		}
+		t.Logf("%s, %d test success\n", result, timestamp)
+	}
+}
+
+// TestGetMonthStartTime tests the GetMonthStartTime function.
+func TestGetMonthStartTime(t *testing.T) {
 	for _, month := range testMonthList {
-		startTime, err := GetStartTime(month, DefaultMonthLayout)
+		startTime, err := GetMonthStartTime(month, DefaultMonthLayout)
 		if err != nil {
 			t.Fail()
 			return
@@ -93,17 +159,17 @@ func TestGetStartTime(t *testing.T) {
 	}
 }
 
-// TestGetEndTime tests the GetEndTime function.
-func TestGetEndTime(t *testing.T) {
+// TestGetMonthEndTime tests the GetMonthEndTime function.
+func TestGetMonthEndTime(t *testing.T) {
 	// not test soFar.
 	for _, month := range testMonthList {
-		startTime, err := GetStartTime(month, DefaultMonthLayout)
+		startTime, err := GetMonthStartTime(month, DefaultMonthLayout)
 		if err != nil {
 			t.Fail()
 			return
 		}
 
-		endTime := GetEndTime(startTime, false)
+		endTime := GetMonthEndTime(startTime, false)
 
 		// the 1, 3, 5, 7, 8, 10, 12 month have 31 days.
 		if array.SearchInt([]int{1, 3, 5, 7, 8, 10, 12}, int(endTime.Month())) > 0 {
@@ -142,13 +208,13 @@ func TestGetEndTime(t *testing.T) {
 
 	// test soFar.
 	for _, month := range testMonthList {
-		startTime, err := GetStartTime(month, DefaultMonthLayout)
+		startTime, err := GetMonthStartTime(month, DefaultMonthLayout)
 		if err != nil {
 			t.Fail()
 			return
 		}
 
-		endTime := GetEndTime(startTime, true)
+		endTime := GetMonthEndTime(startTime, true)
 		if endTime.Unix()-GetNowTimestamp() > 86400 {
 			t.Fail()
 			return

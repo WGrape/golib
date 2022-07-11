@@ -93,6 +93,7 @@ func TestSearchUInt8(t *testing.T) {
 	}
 }
 
+// TestIsStringsEqual test the function IsStringsEqual
 func TestIsStringsEqual(t *testing.T) {
 	if IsStringsEqual([]string{"123"}, []string{"456"}) {
 		t.Fail()
@@ -104,8 +105,72 @@ func TestIsStringsEqual(t *testing.T) {
 	}
 }
 
+// TestShuffleIntSlice test the function ShuffleIntSlice
 func TestShuffleIntSlice(t *testing.T) {
 	var s = []int{1, 9, 6, 3, 5, 2}
 	ShuffleIntSlice(s)
+	fmt.Println(s)
+}
+
+// TestShuffleUIntSlice test the function ShuffleUIntSlice
+func TestShuffleUIntSlice(t *testing.T) {
+	var s = []uint{1, 9, 6, 3, 5, 2}
+	ShuffleUIntSlice(s)
+	fmt.Println(s)
+}
+
+// TestShuffleInt64Slice test the function ShuffleInt64Slice
+func TestShuffleInt64Slice(t *testing.T) {
+	var s = []int64{1, 9, 6, 3, 5, 2}
+	ShuffleInt64Slice(s)
+	fmt.Println(s)
+}
+
+// TestShuffleUInt64Slice test the function ShuffleUInt64Slice
+func TestShuffleUInt64Slice(t *testing.T) {
+	var s = []uint64{1, 9, 6, 3, 5, 2}
+	ShuffleUInt64Slice(s)
+	fmt.Println(s)
+}
+
+// TestShuffleInt32Slice test the function ShuffleInt32Slice
+func TestShuffleInt32Slice(t *testing.T) {
+	var s = []int32{1, 9, 6, 3, 5, 2}
+	ShuffleInt32Slice(s)
+	fmt.Println(s)
+}
+
+// TestShuffleUInt32Slice test the function ShuffleUInt32Slice
+func TestShuffleUInt32Slice(t *testing.T) {
+	var s = []uint32{1, 9, 6, 3, 5, 2}
+	ShuffleUInt32Slice(s)
+	fmt.Println(s)
+}
+
+// TestShuffleInt16Slice test the function ShuffleInt16Slice
+func TestShuffleInt16Slice(t *testing.T) {
+	var s = []int16{1, 9, 6, 3, 5, 2}
+	ShuffleInt16Slice(s)
+	fmt.Println(s)
+}
+
+// TestShuffleUInt16Slice test the function ShuffleUInt16Slice
+func TestShuffleUInt16Slice(t *testing.T) {
+	var s = []uint16{1, 9, 6, 3, 5, 2}
+	ShuffleUInt16Slice(s)
+	fmt.Println(s)
+}
+
+// TestShuffleInt8Slice test the function ShuffleInt8Slice
+func TestShuffleInt8Slice(t *testing.T) {
+	var s = []int8{1, 9, 6, 3, 5, 2}
+	ShuffleInt8Slice(s)
+	fmt.Println(s)
+}
+
+// TestShuffleUInt8Slice test the function ShuffleUInt8Slice
+func TestShuffleUInt8Slice(t *testing.T) {
+	var s = []uint8{1, 9, 6, 3, 5, 2}
+	ShuffleUInt8Slice(s)
 	fmt.Println(s)
 }
