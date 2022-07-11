@@ -74,10 +74,10 @@ func TestGetCurrentDate(t *testing.T) {
 	}
 }
 
-// TestGetDayStartTime tests the GetDayStartTime function
-func TestGetDayStartTime(t *testing.T) {
+// TestGetTomorrowStartTime tests the GetTomorrowStartTime function
+func TestGetTomorrowStartTime(t *testing.T) {
 	for _, date := range []string{"20240229", "20220720", "20220730", "20220731"} {
-		startTime, err := GetDayStartTime(date, "20060102")
+		startTime, err := GetTomorrowStartTime(date, "20060102")
 		if err != nil {
 			t.Fail()
 			return
@@ -107,10 +107,10 @@ func TestGetDayStartTime(t *testing.T) {
 	}
 }
 
-// TestGetDayEndTime tests the GetDayEndTime function
-func TestGetDayEndTime(t *testing.T) {
+// TestGetTomorrowEndTime tests the GetTomorrowEndTime function
+func TestGetTomorrowEndTime(t *testing.T) {
 	for _, date := range []string{"20240229", "20220720", "20220730", "20220731"} {
-		startTime, err := GetDayEndTime(date, "20060102")
+		startTime, err := GetTomorrowEndTime(date, "20060102")
 		if err != nil {
 			t.Fail()
 			return
@@ -138,6 +138,21 @@ func TestGetDayEndTime(t *testing.T) {
 		}
 		t.Logf("%s, %d test success\n", result, timestamp)
 	}
+}
+
+// TestGetTomorrowDate tests the GetTomorrowDate function
+func TestGetTomorrowDate(t *testing.T) {
+	result, err := GetTomorrowDate("2022-04-06", DefaultDateLayout)
+	if err != nil {
+		t.Fail()
+		return
+	}
+
+	if result != "2022-04-07" {
+		t.Fail()
+		return
+	}
+	t.Logf("%s test success\n", result)
 }
 
 // TestGetMonthStartTime tests the GetMonthStartTime function.

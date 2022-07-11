@@ -51,8 +51,8 @@ func GetCurrentDate(layout string) string {
 	return sdtime.Now().Format(layout)
 }
 
-// GetDayStartTime returns the start time of day.
-func GetDayStartTime(date string, layout string) (sdtime.Time, error) {
+// GetTomorrowStartTime returns the start time of tomorrow.
+func GetTomorrowStartTime(date string, layout string) (sdtime.Time, error) {
 	startTime, err := sdtime.ParseInLocation(layout, date, location)
 	if err != nil {
 		return startTime, err
@@ -60,13 +60,23 @@ func GetDayStartTime(date string, layout string) (sdtime.Time, error) {
 	return startTime.AddDate(0, 0, 1), nil
 }
 
-// GetDayEndTime returns the end time of day.
-func GetDayEndTime(date string, layout string) (sdtime.Time, error) {
-	startTime, err := GetDayStartTime(date, layout)
+// GetTomorrowEndTime returns the end time of tomorrow.
+func GetTomorrowEndTime(date string, layout string) (sdtime.Time, error) {
+	startTime, err := GetTomorrowStartTime(date, layout)
 	if err != nil {
 		return startTime, err
 	}
 	return startTime.Add(86399 * sdtime.Second), nil
+}
+
+// GetTomorrowDate returns tomorrow date.
+func GetTomorrowDate(date string, layout string) (string, error) {
+	tomorrow, err := GetTomorrowStartTime(date, layout)
+	if err != nil {
+		return "", err
+	}
+
+	return tomorrow.Format(layout), nil
 }
 
 // GetMonthStartTime returns the start time of month.
