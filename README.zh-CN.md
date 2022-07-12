@@ -59,11 +59,15 @@ func (strategy *UseStrategy) getCombinationList(propertyList []string) []string 
 }
 ```
 
+## 贡献
+由于本项目由各个独立的```package```组成，所以几乎不会有代码阅读成本。如果你有更好的想法，非常欢迎加入一起贡献。关于如何贡献请参考[贡献文档](.github/CONTRIBUTING.md)。
+
 ## 包列表
 
-| package | description                | api                                                          |
-|---------|----------------------------|--------------------------------------------------------------|
-| time    | time包提供了更高效的时间处理操作         | [文档](https://pkg.go.dev/github.com/WGrape/golib/time)        |
-| array    | array包提供了更高效的数组操作          | [文档](https://pkg.go.dev/github.com/WGrape/golib/array)       |
-| permutation | permutation包提供了排列组合算法相关的操作 | [文档](https://pkg.go.dev/github.com/WGrape/golib/permutation) |
-| desensitization | desensitization包提供数据脱敏支持   | [文档](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
+| package | description                       | api                                                              |
+|---------|-----------------------------------|------------------------------------------------------------------|
+| time    | time包提供了更高效的时间处理操作                | [文档](https://pkg.go.dev/github.com/WGrape/golib/time)            |
+| array    | array包提供了更高效的数组操作                 | [文档](https://pkg.go.dev/github.com/WGrape/golib/array)           |
+| permutation | permutation包提供了排列组合算法相关的操作        | [文档](https://pkg.go.dev/github.com/WGrape/golib/permutation)     |
+| desensitization | desensitization包提供数据脱敏支持          | [文档](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
+| convert         | convert包提供了更加简单的整型、浮点型、字符串类型之间的转换 | [文档](https://pkg.go.dev/github.com/WGrape/golib/convert)         |

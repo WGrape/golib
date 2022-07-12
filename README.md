@@ -59,11 +59,15 @@ func (strategy *UseStrategy) getCombinationList(propertyList []string) []string 
 }
 ```
 
+## Contributing
+Since this project consists of individual ```package```, there is almost no code reading cost. If you have better ideas, you are very welcome to join in and contribute. Please refer to [Contribution Documentation](.github/CONTRIBUTING.md) on how to contribute.
+
 ## Package list
 
-| package | description                                                                               | api                                                                    |
-|---------|-------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| time    | Package time provides functionality for measuring and displaying time more efficiently.   | [document](https://pkg.go.dev/github.com/WGrape/golib/time)                 |
- | array | Package array provides functionality for measuring and displaying array more efficiently. | [document](https://pkg.go.dev/github.com/WGrape/golib/array)                |
-| permutation | Package permutation provides many algorithms about permutation and combination.           | [document](https://pkg.go.dev/github.com/WGrape/golib/permutation)          |
+| package         | description                                                                               | api                                                                    |
+|-----------------|-------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| time            | Package time provides functionality for measuring and displaying time more efficiently.   | [document](https://pkg.go.dev/github.com/WGrape/golib/time)                 |
+ | array           | Package array provides functionality for measuring and displaying array more efficiently. | [document](https://pkg.go.dev/github.com/WGrape/golib/array)                |
+| permutation     | Package permutation provides many algorithms about permutation and combination.           | [document](https://pkg.go.dev/github.com/WGrape/golib/permutation)          |
  | desensitization | Package desensitization provides data desensitization support.                            | [document](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
+| convert         | Package convert provides simpler conversion between int, float, and string.               | [document](https://pkg.go.dev/github.com/WGrape/golib/convert) |
