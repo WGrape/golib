@@ -236,3 +236,17 @@ func TestGetMonthEndTime(t *testing.T) {
 		}
 	}
 }
+
+// TestParseIso8601ToTime test the function
+func TestParseIso8601ToTime(t *testing.T) {
+	result, err := ParseIso8601ToTime("2004-05-03T17:30:08+08:00")
+	if err != nil {
+		t.Fail()
+		return
+	}
+	if result.Format(DefaultLayout) != "2004-05-03 17:30:08" {
+		t.Fail()
+		return
+	}
+	t.Logf("%s test success\n", result)
+}

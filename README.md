@@ -66,8 +66,9 @@ Since this project consists of individual ```package```, there is almost no code
 
 | package         | description                                                                               | api                                                                    |
 |-----------------|-------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| time            | Package time provides functionality for measuring and displaying time more efficiently.   | [document](https://pkg.go.dev/github.com/WGrape/golib/time)                 |
- | array           | Package array provides functionality for measuring and displaying array more efficiently. | [document](https://pkg.go.dev/github.com/WGrape/golib/array)                |
-| permutation     | Package permutation provides many algorithms about permutation and combination.           | [document](https://pkg.go.dev/github.com/WGrape/golib/permutation)          |
- | desensitization | Package desensitization provides data desensitization support.                            | [document](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
-| convert         | Package convert provides simpler conversion between int, float, and string.               | [document](https://pkg.go.dev/github.com/WGrape/golib/convert) |
+| safego          | Package safego provides a series of security behaviors.                                   | [document](https://pkg.go.dev/github.com/WGrape/golib/safego)          |
+| permutation     | Package permutation provides many algorithms about permutation and combination.           | [document](https://pkg.go.dev/github.com/WGrape/golib/permutation)     |
+| desensitization | Package desensitization provides data desensitization support.                            | [document](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
+| time            | Package time provides functionality for measuring and displaying time more efficiently.   | [document](https://pkg.go.dev/github.com/WGrape/golib/time)            |
+ | array           | Package array provides functionality for measuring and displaying array more efficiently. | [document](https://pkg.go.dev/github.com/WGrape/golib/array)           |
+| convert         | Package convert provides simpler conversion between int, float, and string.               | [document](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
