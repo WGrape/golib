@@ -96,3 +96,12 @@ func GetMonthEndTime(startTime sdtime.Time, soFar bool) sdtime.Time {
 	}
 	return endTime
 }
+
+// ParseIso8601ToTime converts the iso8601 time to time type, about iso8601 is here https://zh.m.wikipedia.org/zh-hans/ISO_8601
+func ParseIso8601ToTime(iso8601TimeString string) (sdtime.Time, error) {
+	result, err := sdtime.ParseInLocation("2006-01-02T15:04:05+08:00", iso8601TimeString, sdtime.Local)
+	if err != nil {
+		return sdtime.Time{}, err
+	}
+	return result, nil
+}
