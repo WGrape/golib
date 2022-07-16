@@ -2,14 +2,20 @@
 
 ## 1、Steps
 
-### (1) create package
+### (1) fork project
+First fork this project and switch to your [feat branch](./BRANCH_CONVENTION.md).
+
+### (2) create package
 You can create a new package directly when you have a great idea, or you would skip this step if it exists already.
 
-### (2) write your function
+### (3) write your idea
 Write your great idea in a function, such as calculating the distance between two cities.
 
-### (3) test your function
+### (4) test your idea
 Create a unit test to make sure your function running safely.
+
+### (5) commit and push
+After the above steps is all completed, you can [commit](./COMMIT_CONVENTION.md) the code and make a [PR](./PULL_REQUEST_TEMPLATE.md) to the repository.
 
 ## 2、Workflow
 
