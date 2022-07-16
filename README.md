@@ -68,6 +68,7 @@ Since this project consists of individual ```package```, there is almost no code
 |-----------------|-------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
 | safego          | Package safego provides a series of security behaviors.                                   | [document](https://pkg.go.dev/github.com/WGrape/golib/safego)          |
 | permutation     | Package permutation provides many algorithms about permutation and combination.           | [document](https://pkg.go.dev/github.com/WGrape/golib/permutation)     |
+| http            | The http package provides efficient and high-performance network operations.              | [document](https://pkg.go.dev/github.com/WGrape/golib/http)            |
 | desensitization | Package desensitization provides data desensitization support.                            | [document](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
 | time            | Package time provides functionality for measuring and displaying time more efficiently.   | [document](https://pkg.go.dev/github.com/WGrape/golib/time)            |
  | array           | Package array provides functionality for measuring and displaying array more efficiently. | [document](https://pkg.go.dev/github.com/WGrape/golib/array)           |
