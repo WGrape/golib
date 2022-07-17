@@ -9,32 +9,29 @@ import (
 	"strings"
 )
 
-// resultList is an array of all results.
-var (
-	resultList [][]string
-)
-
 // generate will find out all combinations and fill them into the resultList
-func generate(start int, targetLen int, nums []string, tmpArray []string) {
+func generate(start int, targetLen int, nums []string, tmpArray []string) [][]string {
 	if len(tmpArray) == targetLen {
 		part := make([]string, len(tmpArray))
 		copy(part, tmpArray)
-		resultList = append(resultList, part)
-		return
+		return [][]string{part}
 	}
 
+	var resultList [][]string
 	for i := start; i <= len(nums)-1; i++ {
 		tmpArray = append(tmpArray, nums[i])
-		generate(i+1, targetLen, nums, tmpArray)
+		resultList = append(resultList, generate(i+1, targetLen, nums, tmpArray)...)
 		tmpArray = tmpArray[:len(tmpArray)-1]
 	}
+
+	return resultList
 }
 
 // GetCombinations return the all combinations of the given string array.
 func GetCombinations(array []string) [][]string {
-	resultList = nil
+	var resultList [][]string
 	for targetLen := len(array); targetLen >= 1; targetLen-- {
-		generate(0, targetLen, array, make([]string, 0))
+		resultList = append(resultList, generate(0, targetLen, array, make([]string, 0))...)
 	}
 	return resultList
 }
