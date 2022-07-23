@@ -105,3 +105,37 @@ func ParseIso8601ToTime(iso8601TimeString string) (sdtime.Time, error) {
 	}
 	return result, nil
 }
+
+// GetBetweenDates return all dates in the period based on start date and end date, the format of param date is "2006-01-02 15:04:05".
+func GetBetweenDates(startDate, endDate string) ([]string, error) {
+	var d []string
+	timeFormatTpl := "2006-01-02 15:04:05"
+	if len(timeFormatTpl) != len(startDate) {
+		timeFormatTpl = timeFormatTpl[0:len(startDate)]
+	}
+	date, err := sdtime.Parse(timeFormatTpl, startDate)
+	if err != nil {
+		return d, err
+	}
+
+	date2, err2 := sdtime.Parse(timeFormatTpl, endDate)
+	if err2 != nil {
+		return d, err2
+	}
+	if date2.Before(date) {
+		return d, err2
+	}
+
+	timeFormatTpl = "20060102"
+	date2Str := date2.Format(timeFormatTpl)
+	d = append(d, date.Format(timeFormatTpl))
+	for {
+		date = date.AddDate(0, 0, 1)
+		dateStr := date.Format(timeFormatTpl)
+		if dateStr > date2Str {
+			break
+		}
+		d = append(d, dateStr)
+	}
+	return d, err
+}
