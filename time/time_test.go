@@ -237,7 +237,7 @@ func TestGetMonthEndTime(t *testing.T) {
 	}
 }
 
-// TestParseIso8601ToTime test the function
+// TestParseIso8601ToTime test the ParseIso8601ToTime function
 func TestParseIso8601ToTime(t *testing.T) {
 	result, err := ParseIso8601ToTime("2004-05-03T17:30:08+08:00")
 	if err != nil {
@@ -249,4 +249,23 @@ func TestParseIso8601ToTime(t *testing.T) {
 		return
 	}
 	t.Logf("%s test success\n", result)
+}
+
+// TestGetBetweenDates test the function
+func TestGetBetweenDates(t *testing.T) {
+	var (
+		startDate = "2022-07-01"
+		endDate   = "2022-07-31"
+	)
+	dates, err := GetBetweenDates(startDate, endDate)
+	if err != nil {
+		t.Fail()
+		return
+	}
+
+	if len(dates) != 31 {
+		t.Fail()
+		return
+	}
+	t.Logf("%s test success\n", dates)
 }
