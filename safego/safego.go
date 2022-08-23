@@ -4,3 +4,28 @@
 
 // Package safego provides a set of security behaviors.
 package safego
+
+import (
+	"os"
+	"os/signal"
+	"syscall"
+)
+
+// ListenServerStop listen the server is stopped
+func ListenServerStop(isStopped *bool) <-chan bool {
+	var (
+		wait    = make(chan bool)
+		sigChan = make(chan os.Signal, 1)
+	)
+	signal.Notify(sigChan, syscall.SIGQUIT, syscall.SIGTERM, syscall.SIGINT)
+
+	for {
+		s := <-sigChan
+		switch s {
+		case syscall.SIGQUIT, syscall.SIGTERM, syscall.SIGINT:
+			*isStopped = true
+			close(wait)
+			return wait
+		}
+	}
+}
