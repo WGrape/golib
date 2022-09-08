@@ -74,3 +74,4 @@ func (strategy *UseStrategy) getCombinationList(propertyList []string) []string 
 | array           | array包提供了更高效的数组操作                 | [文档](https://pkg.go.dev/github.com/WGrape/golib/array)           |
 | convert         | convert包提供了更加简单的整型、浮点型、字符串类型之间的转换 | [文档](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
 | set             | set包提供了更加简单的集合运算操作                | [文档](https://pkg.go.dev/github.com/WGrape/golib/set)             |
+| math            | math包提供了更加简单的关于数学计算相关的操作          | [文档](https://pkg.go.dev/github.com/WGrape/golib/math)             |
