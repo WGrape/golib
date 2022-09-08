@@ -41,4 +41,12 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+# 5、Test the directory of set
+echo "4. test the directory of set"
+cd set && go test -v . && cd ../
+if [ $? -ne 0 ]; then
+  echo -e " >>>>>>>>>>>> Sorry, unit test failed <<<<<<<<<<<<"
+  exit 1
+fi
+
 echo -e "------------ The script unit_test.sh is stopped ------------"

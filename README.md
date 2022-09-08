@@ -73,3 +73,4 @@ Since this project consists of individual ```package```, there is almost no code
 | time            | Package time provides functionality for measuring and displaying time more efficiently.   | [document](https://pkg.go.dev/github.com/WGrape/golib/time)            |
  | array           | Package array provides functionality for measuring and displaying array more efficiently. | [document](https://pkg.go.dev/github.com/WGrape/golib/array)           |
 | convert         | Package convert provides simpler conversion between int, float, and string.               | [document](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
+| set             | Package set provides simpler set operations.                                              | [document](https://pkg.go.dev/github.com/WGrape/golib/set)             |
