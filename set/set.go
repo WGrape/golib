@@ -1,6 +1,6 @@
 package set
 
-// Intersect 求交集
+// Intersect return the intersection of slice1 and slice2
 func Intersect(slice1, slice2 []int64) []int64 {
 	var m = make(map[int64]int)
 	for _, v := range slice1 {
@@ -17,7 +17,7 @@ func Intersect(slice1, slice2 []int64) []int64 {
 	return result
 }
 
-// Difference 求差集
+// Difference return the difference of slice1 and slice2
 func Difference(slice1 []int64, slice2 []int64) []int64 {
 	var m = make(map[int64]int)
 	inter := Intersect(slice1, slice2)
