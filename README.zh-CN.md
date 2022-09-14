@@ -64,14 +64,15 @@ func (strategy *UseStrategy) getCombinationList(propertyList []string) []string 
 
 ## 包列表
 
-| package         | description                       | api                                                              |
-|-----------------|-----------------------------------|------------------------------------------------------------------|
-| safego          | safego包提供了一系列的安全性行为               | [文档](https://pkg.go.dev/github.com/WGrape/golib/sagego)          |
-| permutation     | permutation包提供了排列组合算法相关的操作        | [文档](https://pkg.go.dev/github.com/WGrape/golib/permutation)     |
-| http            | http包提供了高效高性能的网络操作                | [文档](https://pkg.go.dev/github.com/WGrape/golib/http)            |
-| desensitization | desensitization包提供数据脱敏支持          | [文档](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
-| time            | time包提供了更高效的时间处理操作                | [文档](https://pkg.go.dev/github.com/WGrape/golib/time)            |
-| array           | array包提供了更高效的数组操作                 | [文档](https://pkg.go.dev/github.com/WGrape/golib/array)           |
-| convert         | convert包提供了更加简单的整型、浮点型、字符串类型之间的转换 | [文档](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
-| set             | set包提供了更加简单的集合运算操作                | [文档](https://pkg.go.dev/github.com/WGrape/golib/set)             |
-| math            | math包提供了更加简单的关于数学计算相关的操作          | [文档](https://pkg.go.dev/github.com/WGrape/golib/math)             |
+| package         | description                           | api                                                              |
+|-----------------|---------------------------------------|------------------------------------------------------------------|
+| safego          | safego包提供了一系列的安全性行为                   | [文档](https://pkg.go.dev/github.com/WGrape/golib/sagego)          |
+| permutation     | permutation包提供了排列组合算法相关的操作            | [文档](https://pkg.go.dev/github.com/WGrape/golib/permutation)     |
+| http            | http包提供了高效高性能的网络操作                    | [文档](https://pkg.go.dev/github.com/WGrape/golib/http)            |
+| redis           | redis包提供了更高级的操作，如解决缓存穿透、缓存击穿、缓存雪崩等问题. | [文档](https://pkg.go.dev/github.com/WGrape/golib/redis)           |
+| desensitization | desensitization包提供数据脱敏支持              | [文档](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
+| time            | time包提供了更高效的时间处理操作                    | [文档](https://pkg.go.dev/github.com/WGrape/golib/time)            |
+| array           | array包提供了更高效的数组操作                     | [文档](https://pkg.go.dev/github.com/WGrape/golib/array)           |
+| convert         | convert包提供了更加简单的整型、浮点型、字符串类型之间的转换     | [文档](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
+| set             | set包提供了更加简单的集合运算操作                    | [文档](https://pkg.go.dev/github.com/WGrape/golib/set)             |
+| math            | math包提供了更加简单的关于数学计算相关的操作              | [文档](https://pkg.go.dev/github.com/WGrape/golib/math)            |
