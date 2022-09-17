@@ -6,6 +6,8 @@
 package time
 
 import (
+	"errors"
+	"fmt"
 	sdtime "time"
 )
 
@@ -138,4 +140,32 @@ func GetBetweenDates(startDate, endDate string) ([]string, error) {
 		d = append(d, dateStr)
 	}
 	return d, err
+}
+
+// GetYearMonthBetweenTime returns the time range between startTime and endTime
+func GetYearMonthBetweenTime(startTime, endTime sdtime.Time) ([]string, error) {
+	if !startTime.Before(endTime) {
+		return []string{}, errors.New("startTime is bigger than endTime")
+	}
+
+	startYear, startMonth, _ := startTime.Date()
+	endYear, endMonth, _ := endTime.Date()
+
+	s := make([]string, 0)
+	var curMonth = startMonth
+	for curYear := startYear; curYear <= endYear; curYear++ {
+		if curYear != endYear {
+			for ; curMonth <= sdtime.Month(12); curMonth++ {
+				s = append(s, fmt.Sprintf("%d%02d", curYear, curMonth))
+			}
+			curMonth = sdtime.Month(1)
+		}
+		if curYear == endYear {
+			for ; curMonth <= endMonth; curMonth++ {
+				s = append(s, fmt.Sprintf("%d%02d", curYear, curMonth))
+			}
+		}
+	}
+
+	return s, nil
 }
