@@ -1,7 +1,9 @@
 package time
 
 import (
+	"errors"
 	"github.com/WGrape/golib/array"
+	"github.com/stretchr/testify/assert"
 	"testing"
 	sdtime "time"
 )
@@ -268,4 +270,70 @@ func TestGetBetweenDates(t *testing.T) {
 		return
 	}
 	t.Logf("%s test success\n", dates)
+}
+
+func TestGetCurrentIndex_Month_01(t *testing.T) {
+	baghdad, err := sdtime.LoadLocation("Asia/Shanghai")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	time1 := sdtime.Date(2013, 1, 1, 00, 00, 00, 0, baghdad)
+	time2 := sdtime.Date(2013, 12, 1, 00, 00, 00, 0, baghdad)
+	tRange, _ := GetYearMonthBetweenTime(time1, time2)
+	assert.Equal(t, tRange, []string{
+		"201301",
+		"201302",
+		"201303",
+		"201304",
+		"201305",
+		"201306",
+		"201307",
+		"201308",
+		"201309",
+		"201310",
+		"201311",
+		"201312",
+	})
+}
+
+func TestGetCurrentIndex_Month_03(t *testing.T) {
+	baghdad, err := sdtime.LoadLocation("Asia/Shanghai")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	time1 := sdtime.Date(2012, 11, 30, 23, 55, 00, 0, baghdad)
+	time2 := sdtime.Date(2013, 3, 30, 23, 55, 00, 0, baghdad)
+	tRange, _ := GetYearMonthBetweenTime(time1, time2)
+	assert.Equal(t, tRange, []string{"201211", "201212", "201301", "201302", "201303"})
+}
+
+func TestGetCurrentIndex_Month_04(t *testing.T) {
+	baghdad, err := sdtime.LoadLocation("Asia/Shanghai")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	time1 := sdtime.Date(2012, 11, 30, 23, 55, 00, 0, baghdad)
+	time2 := sdtime.Date(2013, 3, 30, 23, 55, 00, 0, baghdad)
+	tRange, err := GetYearMonthBetweenTime(time2, time1)
+	assert.Equal(t, tRange, []string{})
+	assert.Equal(t, err, errors.New("startTime is bigger than endTime"))
+}
+
+func TestGetCurrentIndex_Month_05(t *testing.T) {
+	baghdad, err := sdtime.LoadLocation("Asia/Shanghai")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	time1 := sdtime.Date(2010, 11, 30, 23, 55, 00, 0, baghdad)
+	time2 := sdtime.Date(2012, 3, 30, 23, 55, 00, 0, baghdad)
+	tRange, _ := GetYearMonthBetweenTime(time1, time2)
+	assert.Equal(t, tRange, []string{
+		"201011", "201012", "201101", "201102", "201103",
+		"201104", "201105", "201106", "201107", "201108",
+		"201109", "201110", "201111", "201112", "201201",
+		"201202", "201203"})
 }
