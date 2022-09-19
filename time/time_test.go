@@ -2,6 +2,7 @@ package time
 
 import (
 	"github.com/WGrape/golib/array"
+	"reflect"
 	"testing"
 	sdtime "time"
 )
@@ -251,7 +252,7 @@ func TestParseIso8601ToTime(t *testing.T) {
 	t.Logf("%s test success\n", result)
 }
 
-// TestGetBetweenDates test the function
+// TestGetBetweenDates test the GetBetweenDates function
 func TestGetBetweenDates(t *testing.T) {
 	var (
 		startDate = "2022-07-01"
@@ -268,4 +269,51 @@ func TestGetBetweenDates(t *testing.T) {
 		return
 	}
 	t.Logf("%s test success\n", dates)
+}
+
+// TestGetYearMonthBetweenTime test the GetYearMonthBetweenTime function
+func TestGetYearMonthBetweenTime(t *testing.T) {
+	baghdad, err := sdtime.LoadLocation("Asia/Shanghai")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	time1 := sdtime.Date(2012, 11, 30, 23, 55, 00, 0, baghdad)
+	time2 := sdtime.Date(2013, 3, 30, 23, 55, 00, 0, baghdad)
+	tRange, _ := GetYearMonthBetweenTime(time1, time2)
+	if !reflect.DeepEqual(tRange, []string{"201211", "201212", "201301", "201302", "201303"}) {
+		t.Fail()
+		return
+	}
+
+	time1 = sdtime.Date(2012, 11, 30, 23, 55, 00, 0, baghdad)
+	time2 = sdtime.Date(2013, 3, 30, 23, 55, 00, 0, baghdad)
+	if tRange, err = GetYearMonthBetweenTime(time2, time1); err == nil || len(tRange) != 0 {
+		t.Fail()
+		return
+	}
+
+	time1 = sdtime.Date(2010, 11, 30, 23, 55, 00, 0, baghdad)
+	time2 = sdtime.Date(2012, 3, 30, 23, 55, 00, 0, baghdad)
+	tRange, _ = GetYearMonthBetweenTime(time1, time2)
+	if !reflect.DeepEqual(tRange, []string{
+		"201011", "201012", "201101", "201102", "201103",
+		"201104", "201105", "201106", "201107", "201108",
+		"201109", "201110", "201111", "201112", "201201",
+		"201202", "201203"}) {
+		t.Fail()
+		return
+	}
+
+	time1 = sdtime.Date(2013, 1, 1, 00, 00, 00, 0, baghdad)
+	time2 = sdtime.Date(2013, 12, 1, 00, 00, 00, 0, baghdad)
+	tRange, _ = GetYearMonthBetweenTime(time1, time2)
+	if !reflect.DeepEqual(tRange, []string{
+		"201301", "201302", "201303", "201304", "201305",
+		"201306", "201307", "201308", "201309", "201310",
+		"201311", "201312",
+	}) {
+		t.Fail()
+		return
+	}
 }
