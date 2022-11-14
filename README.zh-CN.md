@@ -3,6 +3,8 @@
 </div>
 
 <div align="center">
+    <!-- oscs: https://www.oscs1024.com/cd/1543980900807675904?sign=a3d02348 -->
+    <a href="https://www.oscs1024.com/project/oscs/WGrape/golib?ref=badge_small" alt="OSCS Status"><img src="https://www.oscs1024.com/platform/badge/WGrape/golib.svg?size=small"/></a>
     <img src="https://img.shields.io/badge/go-1.13+-blue.svg">
     <img src="https://github.com/wgrape/golib/actions/workflows/build.yml/badge.svg">
     <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/wgrape/golib">
