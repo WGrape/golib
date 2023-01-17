@@ -1,7 +1,7 @@
 package slice
 
 import (
-	"fmt"
+	"reflect"
 	"testing"
 )
 
@@ -13,5 +13,8 @@ func TestRange(t *testing.T) {
 		}
 		return true
 	})
-	fmt.Println(res)
+	if !reflect.DeepEqual(res, []int{1, 3, 5, 7, 9}) {
+		t.Fail()
+		return
+	}
 }
