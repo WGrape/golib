@@ -31,7 +31,7 @@ Using ```go get``` or ```go mod``` the two ways to download this project. It is 
 
 ### go get
 ```bash
-go get github.com/WGrape/golibt@latest
+go get github.com/WGrape/golib@latest
 ```
 
 ### go mod
