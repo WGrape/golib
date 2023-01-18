@@ -1,9 +1,9 @@
 package slice
 
 // Range 根据条件遍历删除切片内元素，返回一个新切片
-func Range[T any](data []T, f func(T) bool) []T {
+func Range(data []int, f func(n int) bool) []int {
 	k := 0
-	res := make([]T, len(data))
+	res := make([]int, len(data))
 	for _, item := range data {
 		if !f(item) {
 			res[k] = item
