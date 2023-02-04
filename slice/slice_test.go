@@ -10,7 +10,6 @@ func TestRange(t *testing.T) {
 	res := Range(slice, func(n int) bool {
       return n%2 == 0
 	})
-  
 	if !reflect.DeepEqual(res, []int{1, 3, 5, 7, 9}) {
 		t.Fail()
 		return
@@ -28,7 +27,7 @@ func TestDelDuplicate(t *testing.T) {
 
 	s2 := []string{"aa", "bbb", "aa", "c"}
 	res2 := DelDuplicate(s2)
-  if !reflect.DeepEqual(res2, []string{"aa", "bbb", "c"}) {
+	if !reflect.DeepEqual(res2, []string{"aa", "bbb", "c"}) {
 		t.Fail()
 		return
 	}

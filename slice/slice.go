@@ -21,7 +21,7 @@ func Range(data []int, f func(n int) bool) []int {
 	return res
 }
 
-// DelDuplicate 列表去重
+// DelDuplicate Del the duplicate elements.
 func DelDuplicate(data interface{}) interface{} {
 	m := make(map[string]struct{})
 	switch slice := data.(type) {
