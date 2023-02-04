@@ -65,6 +65,8 @@ func (strategy *UseStrategy) getCombinationList(propertyList []string) []string 
 ## 贡献
 由于本项目由各个独立的```package```组成，所以几乎不会有代码阅读成本。如果你有更好的想法，非常欢迎加入一起贡献。关于如何贡献请参考[贡献文档](.github/CONTRIBUTING.md)。
 
+<img src="https://contrib.rocks/image?repo=wgrape/golib">
+
 ## 包列表
 
 | package         | description                           | api                                                              |
