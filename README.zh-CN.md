@@ -81,7 +81,7 @@ func (strategy *UseStrategy) getCombinationList(propertyList []string) []string 
 | convert         | convert包提供了更加简单的整型、浮点型、字符串类型之间的转换     | [文档](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
 | set             | set包提供了更加简单的集合运算操作                    | [文档](https://pkg.go.dev/github.com/WGrape/golib/set)             |
 | math            | math包提供了更加简单的关于数学计算相关的操作              | [文档](https://pkg.go.dev/github.com/WGrape/golib/math)            |
-| system          | system包提供了与Linux交互的接口                 | [document](https://pkg.go.dev/github.com/WGrape/golib/system)    |
-| string          | string包提供了更简单的String处理接口              | [document](https://pkg.go.dev/github.com/WGrape/golib/string)    |
-| slice           | slice包提供了更简单的Slice处理接口                | [document](https://pkg.go.dev/github.com/WGrape/golib/slice)     |
-| frontend        | frontend包提供了与前端交互工作时更简单的接口            | [document](https://pkg.go.dev/github.com/WGrape/golib/frontend)  |
+| system          | system包提供了与Linux交互的接口                 | [文档](https://pkg.go.dev/github.com/WGrape/golib/system)    |
+| string          | string包提供了更简单的String处理接口              | [文档](https://pkg.go.dev/github.com/WGrape/golib/string)    |
+| slice           | slice包提供了更简单的Slice处理接口                | [文档](https://pkg.go.dev/github.com/WGrape/golib/slice)     |
+| frontend        | frontend包提供了与前端交互工作时更简单的接口            | [文档](https://pkg.go.dev/github.com/WGrape/golib/frontend)  |
