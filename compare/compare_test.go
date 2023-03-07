@@ -1,10 +1,22 @@
 package compare
 
 import (
-	"fmt"
 	"testing"
 )
 
 func TestCompare(t *testing.T) {
-	fmt.Println(BiggerNum(4,7))
+	if BiggerNum(4, 7) != 7 {
+		t.Fail()
+		return
+	}
+
+	if BiggerNum(7, 2) != 7 {
+		t.Fail()
+		return
+	}
+
+	if BiggerNum(7, 7) != 7 {
+		t.Fail()
+		return
+	}
 }

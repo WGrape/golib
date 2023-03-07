@@ -1,6 +1,6 @@
 package compare
 
-func BiggerNum(a,b int)  int {
+func BiggerNum(a, b int) int {
 	if a > b {
 		return a
 	}
