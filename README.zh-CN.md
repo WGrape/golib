@@ -3,8 +3,11 @@
 </div>
 
 <div align="center">
+    <!-- oscs: https://www.oscs1024.com/cd/1543980900807675904?sign=a3d02348 -->
+    <a href="https://www.oscs1024.com/project/oscs/WGrape/golib?ref=badge_small" alt="OSCS Status"><img src="https://www.oscs1024.com/platform/badge/WGrape/golib.svg?size=small"/></a>
     <img src="https://img.shields.io/badge/go-1.13+-blue.svg">
     <img src="https://github.com/wgrape/golib/actions/workflows/build.yml/badge.svg">
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/wgrape/golib">
     <img src="https://img.shields.io/badge/Document-中文/English-orange.svg">
     <a href="https://godoc.org/github.com/WGrape/golib"><img src="https://godoc.org/github.com/WGrape/golib?status.svg" ></a>
     <img src="https://img.shields.io/badge/License-MIT-green.svg">   
@@ -62,13 +65,23 @@ func (strategy *UseStrategy) getCombinationList(propertyList []string) []string 
 ## 贡献
 由于本项目由各个独立的```package```组成，所以几乎不会有代码阅读成本。如果你有更好的想法，非常欢迎加入一起贡献。关于如何贡献请参考[贡献文档](.github/CONTRIBUTING.md)。
 
+<img src="https://contrib.rocks/image?repo=wgrape/golib">
+
 ## 包列表
 
-| package         | description                       | api                                                              |
-|-----------------|-----------------------------------|------------------------------------------------------------------|
-| safego          | safego包提供了一系列的安全性行为               | [文档](https://pkg.go.dev/github.com/WGrape/golib/sagego)          |
-| permutation     | permutation包提供了排列组合算法相关的操作        | [文档](https://pkg.go.dev/github.com/WGrape/golib/permutation)     |
-| desensitization | desensitization包提供数据脱敏支持          | [文档](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
-| time            | time包提供了更高效的时间处理操作                | [文档](https://pkg.go.dev/github.com/WGrape/golib/time)            |
-| array           | array包提供了更高效的数组操作                 | [文档](https://pkg.go.dev/github.com/WGrape/golib/array)           |
-| convert         | convert包提供了更加简单的整型、浮点型、字符串类型之间的转换 | [文档](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
+| package         | description                           | api                                                              |
+|-----------------|---------------------------------------|------------------------------------------------------------------|
+| safego          | safego包提供了一系列的安全性行为                   | [文档](https://pkg.go.dev/github.com/WGrape/golib/sagego)          |
+| permutation     | permutation包提供了排列组合算法相关的操作            | [文档](https://pkg.go.dev/github.com/WGrape/golib/permutation)     |
+| http            | http包提供了高效高性能的网络操作                    | [文档](https://pkg.go.dev/github.com/WGrape/golib/http)            |
+| redis           | redis包提供了更高级的操作，如解决缓存穿透、缓存击穿、缓存雪崩等问题. | [文档](https://pkg.go.dev/github.com/WGrape/golib/redis)           |
+| desensitization | desensitization包提供数据脱敏支持              | [文档](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
+| time            | time包提供了更高效的时间处理操作                    | [文档](https://pkg.go.dev/github.com/WGrape/golib/time)            |
+| array           | array包提供了更高效的数组操作                     | [文档](https://pkg.go.dev/github.com/WGrape/golib/array)           |
+| convert         | convert包提供了更加简单的整型、浮点型、字符串类型之间的转换     | [文档](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
+| set             | set包提供了更加简单的集合运算操作                    | [文档](https://pkg.go.dev/github.com/WGrape/golib/set)             |
+| math            | math包提供了更加简单的关于数学计算相关的操作              | [文档](https://pkg.go.dev/github.com/WGrape/golib/math)            |
+| system          | system包提供了与Linux交互的接口                 | [document](https://pkg.go.dev/github.com/WGrape/golib/system)    |
+| string          | string包提供了更简单的String处理接口              | [document](https://pkg.go.dev/github.com/WGrape/golib/string)    |
+| slice           | slice包提供了更简单的Slice处理接口                | [document](https://pkg.go.dev/github.com/WGrape/golib/slice)     |
+| frontend        | frontend包提供了与前端交互工作时更简单的接口            | [document](https://pkg.go.dev/github.com/WGrape/golib/frontend)  |
