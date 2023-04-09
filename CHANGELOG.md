@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/WGrape/golib/compare/v1.2.0...v1.3.0) (2023-04-09)
+
+
+### Features
+
+* string functions add array support ([bd1a788](https://github.com/WGrape/golib/commit/bd1a7886db1c6d92f8c2cc361f315ac09acc8535))
+
 ## [1.2.0](https://github.com/WGrape/golib/compare/v1.1.1...v1.2.0) (2023-04-09)
 
 
