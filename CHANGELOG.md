@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.2.0](https://github.com/WGrape/golib/compare/v1.1.1...v1.2.0) (2023-04-09)
+
+
+### Features
+
+* add more time function ([f4d611a](https://github.com/WGrape/golib/commit/f4d611a00b52fe474692681e796ddea0697919ba))
+* add some string functions ([4320e3a](https://github.com/WGrape/golib/commit/4320e3abec3e85a33d0778d1ca5ccdeac691eb01))
+
+
+### Bug Fixes
+
+* review update ([28ef8f9](https://github.com/WGrape/golib/commit/28ef8f9a5090729ae5d0c7c31d435fbc5e3309f7))
+
+
+### Styling
+
+* modify the code style ([3f56cde](https://github.com/WGrape/golib/commit/3f56cdecb9acea40f87f6c55aef8cb2370bfb06c))
+
+
+### Docs
+
+* make doc better ([e7868e3](https://github.com/WGrape/golib/commit/e7868e3937c46dc2e51b94ddf5ae227c990f5d55))
+* make doc better ([a46a6b3](https://github.com/WGrape/golib/commit/a46a6b3f59b623b1bba8f06f2ffcd9e14a588c89))
+
 ## [1.1.1](https://github.com/WGrape/golib/compare/v1.1.0...v1.1.1) (2023-01-17)
 
 
