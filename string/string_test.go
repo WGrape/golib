@@ -78,65 +78,65 @@ func TestIsCamelCase(t *testing.T) {
 }
 
 func TestIsLower(t *testing.T) {
-	if IsLower(rune('p')) != true {
+	if IsLower([]rune{'p'}) != true {
 		t.Fail()
 		return
 	}
 
-	if IsLower(rune('P')) != false {
+	if IsLower([]rune{'P'}) != false {
 		t.Fail()
 		return
 	}
 
-	if IsLower(rune('(')) != false {
+	if IsLower([]rune{'('}) != false {
 		t.Fail()
 		return
 	}
 
-	if IsLower(rune('乐')) != false {
+	if IsLower([]rune{'乐'}) != false {
 		t.Fail()
 		return
 	}
 }
 
 func TestIsUpper(t *testing.T) {
-	if IsUpper(rune('p')) != false {
+	if IsUpper([]rune{'p'}) != false {
 		t.Fail()
 		return
 	}
 
-	if IsUpper(rune('P')) != true {
+	if IsUpper([]rune{'P'}) != true {
 		t.Fail()
 		return
 	}
 
-	if IsUpper(rune('(')) != false {
+	if IsUpper([]rune{'('}) != false {
 		t.Fail()
 		return
 	}
 
-	if IsUpper(rune('乐')) != false {
+	if IsUpper([]rune{'乐'}) != false {
 		t.Fail()
 		return
 	}
 }
 
 func TestIsLetter(t *testing.T) {
-	if IsLetter('2') != false {
+	if IsLetter([]rune{'2'}) != false {
 		t.Fail()
 		return
 	}
-	if IsLetter('s') != true {
+	if IsLetter([]rune{'s'}) != true {
 		t.Fail()
 		return
 	}
 }
 func TestIsDigit(t *testing.T) {
-	if IsDigit('2') != true {
+	if IsDigit([]rune{'2'}) != true {
 		t.Fail()
 		return
 	}
-	if IsDigit('s') != false {
+	if IsDigit([]rune{'s'}) != false {
 		t.Fail()
 		return
 	}

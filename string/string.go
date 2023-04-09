@@ -22,7 +22,7 @@ func IsValidIdentifierName(s string) bool {
 		return false
 	}
 	for _, r := range s {
-		if !IsLetter(r) && !IsDigit(r) {
+		if !IsLetter([]rune{r}) && !IsDigit([]rune{r}) {
 			return false
 		}
 	}
@@ -35,13 +35,13 @@ func IsCamelCase(s string) bool {
 		return true
 	}
 	for i, r := range s {
-		if !IsLetter(r) && !IsDigit(r) {
+		if !IsLetter([]rune{r}) && !IsDigit([]rune{r}) {
 			return false
 		}
 
-		if i == 0 && !IsLower(r) {
+		if i == 0 && !IsLower([]rune{r}) {
 			return false
-		} else if IsUpper(r) {
+		} else if IsUpper([]rune{r}) {
 			return IsCamelCase(s[i+1:])
 		}
 	}
@@ -49,21 +49,41 @@ func IsCamelCase(s string) bool {
 }
 
 // IsUpper return a bool value indicating whether it is an uppercase character.
-func IsUpper(r rune) bool {
-	return unicode.IsUpper(r)
+func IsUpper(str []rune) bool {
+	for _, r := range str {
+		if !unicode.IsUpper(r) {
+			return false
+		}
+	}
+	return true
 }
 
 // IsLower return a bool value indicating whether it is a lowercase character.
-func IsLower(r rune) bool {
-	return unicode.IsLower(r)
+func IsLower(str []rune) bool {
+	for _, r := range str {
+		if !unicode.IsLower(r) {
+			return false
+		}
+	}
+	return true
 }
 
 // IsLetter return a bool value indicating whether it is a letter.
-func IsLetter(r rune) bool {
-	return (r >= 'A' && r <= 'Z') || (r >= 'a' && r <= 'z')
+func IsLetter(str []rune) bool {
+	for _, r := range str {
+		if !((r >= 'A' && r <= 'Z') || (r >= 'a' && r <= 'z')) {
+			return false
+		}
+	}
+	return true
 }
 
 // IsDigit return a bool value indicating whether it is a digit character.
-func IsDigit(r rune) bool {
-	return r >= '0' && r <= '9'
+func IsDigit(str []rune) bool {
+	for _, r := range str {
+		if r < '0' || r > '9' {
+			return false
+		}
+	}
+	return true
 }
