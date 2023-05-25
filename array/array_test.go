@@ -2,6 +2,7 @@ package array
 
 import (
 	"fmt"
+	"reflect"
 	"testing"
 )
 
@@ -173,4 +174,19 @@ func TestShuffleUInt8Slice(t *testing.T) {
 	var s = []uint8{1, 9, 6, 3, 5, 2}
 	ShuffleUInt8Slice(s)
 	fmt.Println(s)
+}
+
+func TestPopOneInt(t *testing.T) {
+	var (
+		e    int
+		list = []int{1, 3, 4, 6, 7}
+	)
+	if e, list = PopOneInt(list); e != 7 {
+		t.Fail()
+		return
+	}
+	if !reflect.DeepEqual(list, []int{1, 3, 4, 6}) {
+		t.Fail()
+		return
+	}
 }

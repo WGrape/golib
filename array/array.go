@@ -180,6 +180,15 @@ func ShuffleUInt8Slice(s []uint8) {
 	rand.Shuffle(len(s), func(i, j int) { s[i], s[j] = s[j], s[i] })
 }
 
+// PopOneInt Pop one int element in the slice
+func PopOneInt(list []int) (int, []int) {
+	if len(list) < 1 {
+		return -1, nil
+	}
+	var element = list[len(list)-1]
+	return element, list[0 : len(list)-1]
+}
+
 // IsStringsEqual return bool means the two arrays are equal or not.
 func IsStringsEqual(arr1 []string, arr2 []string) bool {
 	if (arr1 == nil) != (arr2 == nil) {
