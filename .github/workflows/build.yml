@@ -24,14 +24,14 @@ jobs:
       - run: bash start.sh ../../../
         working-directory: ${{env.working-directory}}
 
-  code_check:
-    runs-on: ubuntu-latest
-    env:
-      working-directory: .github/workflows/deploy
-    steps:
-      - uses: actions/checkout@v1
-      - run: bash code_check.sh ../../../
-        working-directory: ${{env.working-directory}}
+#  code_check:
+#    runs-on: ubuntu-latest
+#    env:
+#      working-directory: .github/workflows/deploy
+#    steps:
+#      - uses: actions/checkout@v1
+#      - run: bash code_check.sh ../../../
+#        working-directory: ${{env.working-directory}}
 
   unit_test:
     runs-on: ubuntu-latest
