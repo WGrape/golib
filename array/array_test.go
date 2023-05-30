@@ -176,6 +176,7 @@ func TestShuffleUInt8Slice(t *testing.T) {
 	fmt.Println(s)
 }
 
+// TestPopOneInt Test the function PopOneInt
 func TestPopOneInt(t *testing.T) {
 	var (
 		e    int
@@ -186,6 +187,14 @@ func TestPopOneInt(t *testing.T) {
 		return
 	}
 	if !reflect.DeepEqual(list, []int{1, 3, 4, 6}) {
+		t.Fail()
+		return
+	}
+}
+
+// TestReverse Test the function Reverse
+func TestReverse(t *testing.T) {
+	if !reflect.DeepEqual(Reverse([]int{1, 2, 3, 4, 5}), []int{5, 4, 3, 2, 1}) {
 		t.Fail()
 		return
 	}
