@@ -5,14 +5,26 @@
 // Package binary provides some operations of binary number and decimal number.
 package binary
 
+import "fmt"
+
 // DecimalNumberToBinary Return a binary array.
-func DecimalNumberToBinary(num int) []int {
-	var binary []int
+func DecimalNumberToBinary(num int) ([]int, []string, string) {
+	var (
+		binary       []int
+		binaryString []string
+		str          string
+	)
 
 	for num != 0 {
-		binary = append(binary, num%2)
+		var (
+			bit    = num % 2
+			bitStr = fmt.Sprintf("%d", bit)
+		)
+		binary = append([]int{bit}, binary...)
+		binaryString = append([]string{bitStr}, binaryString...)
+		str = bitStr + str
 		num = num / 2
 	}
 
-	return binary
+	return binary, binaryString, str
 }
