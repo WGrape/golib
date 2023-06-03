@@ -70,20 +70,21 @@ Since this project consists of individual ```package```, there is almost no code
 
 ## Package list
 
-| package         | description                                                                                                   | api                                                                    |
-|-----------------|---------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| safego          | Package safego provides a series of security behaviors.                                                       | [document](https://pkg.go.dev/github.com/WGrape/golib/safego)          |
-| permutation     | Package permutation provides many algorithms about permutation and combination.                               | [document](https://pkg.go.dev/github.com/WGrape/golib/permutation)     |
-| http            | The http package provides efficient and high-performance network operations.                                  | [document](https://pkg.go.dev/github.com/WGrape/golib/http)            |
+| package         | description                                                                                                    | api                                                                    |
+|-----------------|----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| safego          | Package safego provides a series of security behaviors.                                                        | [document](https://pkg.go.dev/github.com/WGrape/golib/safego)          |
+| permutation     | Package permutation provides many algorithms about permutation and combination.                                | [document](https://pkg.go.dev/github.com/WGrape/golib/permutation)     |
+| http            | The http package provides efficient and high-performance network operations.                                   | [document](https://pkg.go.dev/github.com/WGrape/golib/http)            |
 | redis           | Package redis provides advanced operations, such as ```Cache Penetration, Cache Breakdown, Cache Avalanche```. | [document](https://pkg.go.dev/github.com/WGrape/golib/redis)           |
-| desensitization | Package desensitization provides data desensitization support.                                                | [document](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
-| time            | Package time provides functionality for measuring and displaying time more efficiently.                       | [document](https://pkg.go.dev/github.com/WGrape/golib/time)            |
- | array           | Package array provides functionality for measuring and displaying array more efficiently.                     | [document](https://pkg.go.dev/github.com/WGrape/golib/array)           |
-| binary          | Package binary provides some operations of binary number and decimal number.                      | [document](https://pkg.go.dev/github.com/WGrape/golib/binary)           |
-| convert         | Package convert provides simpler conversion between int, float, and string.                                   | [document](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
-| set             | Package set provides simpler set operations.                                                                  | [document](https://pkg.go.dev/github.com/WGrape/golib/set)             |
-| math            | Package math provides simpler math operations.                                                                | [document](https://pkg.go.dev/github.com/WGrape/golib/math)            |
-| system          | Package system provides an interface to interact with the linux system.                                       | [document](https://pkg.go.dev/github.com/WGrape/golib/system)          |
-| string          | Package string provides an interface to process string in the simpler way.                                    | [document](https://pkg.go.dev/github.com/WGrape/golib/string)          |
-| slice           | Package slice provides an interface to process slice in the simpler way.                                      | [document](https://pkg.go.dev/github.com/WGrape/golib/slice)           |
-| frontend        | Package frontend provides an interface to work with front-end colleagues in the simpler way.                  | [document](https://pkg.go.dev/github.com/WGrape/golib/frontend)        |
+| desensitization | Package desensitization provides data desensitization support.                                                 | [document](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
+| time            | Package time provides functionality for measuring and displaying time more efficiently.                        | [document](https://pkg.go.dev/github.com/WGrape/golib/time)            |
+ | array           | Package array provides functionality for measuring and displaying array more efficiently.                      | [document](https://pkg.go.dev/github.com/WGrape/golib/array)           |
+| binary          | Package binary provides some operations of binary number and decimal number.                                   | [document](https://pkg.go.dev/github.com/WGrape/golib/binary)          |
+| convert         | Package convert provides simpler conversion between int, float, and string.                                    | [document](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
+| set             | Package set provides simpler set operations.                                                                   | [document](https://pkg.go.dev/github.com/WGrape/golib/set)             |
+| rand            | Package rand provides some random operations.                                                                  | [document](https://pkg.go.dev/github.com/WGrape/golib/rand)            |
+| math            | Package math provides simpler math operations.                                                                 | [document](https://pkg.go.dev/github.com/WGrape/golib/math)            |
+| system          | Package system provides an interface to interact with the linux system.                                        | [document](https://pkg.go.dev/github.com/WGrape/golib/system)          |
+| string          | Package string provides an interface to process string in the simpler way.                                     | [document](https://pkg.go.dev/github.com/WGrape/golib/string)          |
+| slice           | Package slice provides an interface to process slice in the simpler way.                                       | [document](https://pkg.go.dev/github.com/WGrape/golib/slice)           |
+| frontend        | Package frontend provides an interface to work with front-end colleagues in the simpler way.                   | [document](https://pkg.go.dev/github.com/WGrape/golib/frontend)        |

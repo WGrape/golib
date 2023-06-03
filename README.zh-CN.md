@@ -78,9 +78,10 @@ func (strategy *UseStrategy) getCombinationList(propertyList []string) []string 
 | desensitization | desensitization包提供数据脱敏支持              | [文档](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
 | time            | time包提供了更高效的时间处理操作                    | [文档](https://pkg.go.dev/github.com/WGrape/golib/time)            |
 | array           | array包提供了更高效的数组操作                     | [文档](https://pkg.go.dev/github.com/WGrape/golib/array)           |
-| binary          | binary包提供了更高效的十进制数字和二进制相关的操作.         | [document](https://pkg.go.dev/github.com/WGrape/golib/binary)    |
+| binary          | binary包提供了更高效的十进制数字和二进制相关的操作.         | [文档](https://pkg.go.dev/github.com/WGrape/golib/binary)    |
 | convert         | convert包提供了更加简单的整型、浮点型、字符串类型之间的转换     | [文档](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
 | set             | set包提供了更加简单的集合运算操作                    | [文档](https://pkg.go.dev/github.com/WGrape/golib/set)             |
+| rand            | rand包提供了一些随机性的操作                      | [文档](https://pkg.go.dev/github.com/WGrape/golib/rand)            |
 | math            | math包提供了更加简单的关于数学计算相关的操作              | [文档](https://pkg.go.dev/github.com/WGrape/golib/math)            |
 | system          | system包提供了与Linux交互的接口                 | [文档](https://pkg.go.dev/github.com/WGrape/golib/system)          |
 | string          | string包提供了更简单的String处理接口              | [文档](https://pkg.go.dev/github.com/WGrape/golib/string)          |
