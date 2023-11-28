@@ -65,6 +65,8 @@ func (strategy *UseStrategy) getCombinationList(propertyList []string) []string 
 ## 贡献
 由于本项目由各个独立的```package```组成，所以几乎不会有代码阅读成本。如果你有更好的想法，非常欢迎加入一起贡献。关于如何贡献请参考[贡献文档](.github/CONTRIBUTING.md)。
 
+<img src="https://contrib.rocks/image?repo=wgrape/golib">
+
 ## 包列表
 
 | package         | description                           | api                                                              |
@@ -76,10 +78,12 @@ func (strategy *UseStrategy) getCombinationList(propertyList []string) []string 
 | desensitization | desensitization包提供数据脱敏支持              | [文档](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
 | time            | time包提供了更高效的时间处理操作                    | [文档](https://pkg.go.dev/github.com/WGrape/golib/time)            |
 | array           | array包提供了更高效的数组操作                     | [文档](https://pkg.go.dev/github.com/WGrape/golib/array)           |
+| binary          | binary包提供了更高效的十进制数字和二进制相关的操作.         | [文档](https://pkg.go.dev/github.com/WGrape/golib/binary)    |
 | convert         | convert包提供了更加简单的整型、浮点型、字符串类型之间的转换     | [文档](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
 | set             | set包提供了更加简单的集合运算操作                    | [文档](https://pkg.go.dev/github.com/WGrape/golib/set)             |
+| rand            | rand包提供了一些随机性的操作                      | [文档](https://pkg.go.dev/github.com/WGrape/golib/rand)            |
 | math            | math包提供了更加简单的关于数学计算相关的操作              | [文档](https://pkg.go.dev/github.com/WGrape/golib/math)            |
-| system          | system包提供了与Linux交互的接口                 | [document](https://pkg.go.dev/github.com/WGrape/golib/system)    |
-| string          | string包提供了更简单的String处理接口              | [document](https://pkg.go.dev/github.com/WGrape/golib/string)    |
-| slice           | slice包提供了更简单的Slice处理接口                | [document](https://pkg.go.dev/github.com/WGrape/golib/slice)     |
-| frontend        | frontend包提供了与前端交互工作时更简单的接口            | [document](https://pkg.go.dev/github.com/WGrape/golib/frontend)  |
+| system          | system包提供了与Linux交互的接口                 | [文档](https://pkg.go.dev/github.com/WGrape/golib/system)          |
+| string          | string包提供了更简单的String处理接口              | [文档](https://pkg.go.dev/github.com/WGrape/golib/string)          |
+| slice           | slice包提供了更简单的Slice处理接口                | [文档](https://pkg.go.dev/github.com/WGrape/golib/slice)           |
+| frontend        | frontend包提供了与前端交互工作时更简单的接口            | [文档](https://pkg.go.dev/github.com/WGrape/golib/frontend)        |

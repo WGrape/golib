@@ -180,6 +180,24 @@ func ShuffleUInt8Slice(s []uint8) {
 	rand.Shuffle(len(s), func(i, j int) { s[i], s[j] = s[j], s[i] })
 }
 
+// PopOneInt Pop one int element in the slice
+func PopOneInt(arr []int) (int, []int) {
+	if len(arr) < 1 {
+		return -1, nil
+	}
+	var element = arr[len(arr)-1]
+	return element, arr[0 : len(arr)-1]
+}
+
+// Reverse Return the new reverse array.
+func Reverse(arr []int) []int {
+	var newArr []int
+	for i := len(arr) - 1; i >= 0; i-- {
+		newArr = append(newArr, arr[i])
+	}
+	return newArr
+}
+
 // IsStringsEqual return bool means the two arrays are equal or not.
 func IsStringsEqual(arr1 []string, arr2 []string) bool {
 	if (arr1 == nil) != (arr2 == nil) {

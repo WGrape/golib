@@ -4,6 +4,7 @@
 
 <div align="center">
     <!-- oscs: https://www.oscs1024.com/cd/1543980900807675904?sign=a3d02348 -->
+    <!-- https://www.murphysec.com/ -->
     <a href="https://www.oscs1024.com/project/oscs/WGrape/golib?ref=badge_small" alt="OSCS Status"><img src="https://www.oscs1024.com/platform/badge/WGrape/golib.svg?size=small"/></a>
     <img src="https://img.shields.io/badge/go-1.13+-blue.svg">
     <img src="https://github.com/wgrape/golib/actions/workflows/build.yml/badge.svg">
@@ -65,6 +66,8 @@ func (strategy *UseStrategy) getCombinationList(propertyList []string) []string 
 ## Contributing
 Since this project consists of individual ```package```, there is almost no code reading cost. If you have better ideas, you are very welcome to join in and contribute. Please refer to [Contribution Documentation](.github/CONTRIBUTING.md) on how to contribute.
 
+<img src="https://contrib.rocks/image?repo=wgrape/golib">
+
 ## Package list
 
 | package         | description                                                                                                    | api                                                                    |
@@ -76,8 +79,10 @@ Since this project consists of individual ```package```, there is almost no code
 | desensitization | Package desensitization provides data desensitization support.                                                 | [document](https://pkg.go.dev/github.com/WGrape/golib/desensitization) |
 | time            | Package time provides functionality for measuring and displaying time more efficiently.                        | [document](https://pkg.go.dev/github.com/WGrape/golib/time)            |
  | array           | Package array provides functionality for measuring and displaying array more efficiently.                      | [document](https://pkg.go.dev/github.com/WGrape/golib/array)           |
+| binary          | Package binary provides some operations of binary number and decimal number.                                   | [document](https://pkg.go.dev/github.com/WGrape/golib/binary)          |
 | convert         | Package convert provides simpler conversion between int, float, and string.                                    | [document](https://pkg.go.dev/github.com/WGrape/golib/convert)         |
 | set             | Package set provides simpler set operations.                                                                   | [document](https://pkg.go.dev/github.com/WGrape/golib/set)             |
+| rand            | Package rand provides some random operations.                                                                  | [document](https://pkg.go.dev/github.com/WGrape/golib/rand)            |
 | math            | Package math provides simpler math operations.                                                                 | [document](https://pkg.go.dev/github.com/WGrape/golib/math)            |
 | system          | Package system provides an interface to interact with the linux system.                                        | [document](https://pkg.go.dev/github.com/WGrape/golib/system)          |
 | string          | Package string provides an interface to process string in the simpler way.                                     | [document](https://pkg.go.dev/github.com/WGrape/golib/string)          |

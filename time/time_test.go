@@ -75,7 +75,7 @@ func TestGetCurrentDate(t *testing.T) {
 	}
 }
 
-// TestGetTomorrowStartTime tests the GetTomorrowStartTime function
+// TestGetTomorrowStartTime tests the GetTomorrowStartTime function.
 func TestGetTomorrowStartTime(t *testing.T) {
 	for _, date := range []string{"20240229", "20220720", "20220730", "20220731"} {
 		startTime, err := GetTomorrowStartTime(date, "20060102")
@@ -108,7 +108,7 @@ func TestGetTomorrowStartTime(t *testing.T) {
 	}
 }
 
-// TestGetTomorrowEndTime tests the GetTomorrowEndTime function
+// TestGetTomorrowEndTime tests the GetTomorrowEndTime function.
 func TestGetTomorrowEndTime(t *testing.T) {
 	for _, date := range []string{"20240229", "20220720", "20220730", "20220731"} {
 		startTime, err := GetTomorrowEndTime(date, "20060102")
@@ -141,7 +141,7 @@ func TestGetTomorrowEndTime(t *testing.T) {
 	}
 }
 
-// TestGetTomorrowDate tests the GetTomorrowDate function
+// TestGetTomorrowDate tests the GetTomorrowDate function.
 func TestGetTomorrowDate(t *testing.T) {
 	result, err := GetTomorrowDate("2022-04-06", DefaultDateLayout)
 	if err != nil {
@@ -238,7 +238,7 @@ func TestGetMonthEndTime(t *testing.T) {
 	}
 }
 
-// TestParseIso8601ToTime test the ParseIso8601ToTime function
+// TestParseIso8601ToTime test the ParseIso8601ToTime function.
 func TestParseIso8601ToTime(t *testing.T) {
 	result, err := ParseIso8601ToTime("2004-05-03T17:30:08+08:00")
 	if err != nil {
@@ -252,7 +252,7 @@ func TestParseIso8601ToTime(t *testing.T) {
 	t.Logf("%s test success\n", result)
 }
 
-// TestGetBetweenDates test the GetBetweenDates function
+// TestGetBetweenDates test the GetBetweenDates function.
 func TestGetBetweenDates(t *testing.T) {
 	var (
 		startDate = "2022-07-01"
@@ -271,7 +271,7 @@ func TestGetBetweenDates(t *testing.T) {
 	t.Logf("%s test success\n", dates)
 }
 
-// TestGetYearMonthBetweenTime test the GetYearMonthBetweenTime function
+// TestGetYearMonthBetweenTime test the GetYearMonthBetweenTime function.
 func TestGetYearMonthBetweenTime(t *testing.T) {
 	baghdad, err := sdtime.LoadLocation("Asia/Shanghai")
 	if err != nil {
@@ -313,6 +313,118 @@ func TestGetYearMonthBetweenTime(t *testing.T) {
 		"201306", "201307", "201308", "201309", "201310",
 		"201311", "201312",
 	}) {
+		t.Fail()
+		return
+	}
+}
+
+// TestIsInSameYear test the IsInSameYear function.
+func TestIsInSameYear(t *testing.T) {
+	if IsInSameYear() != true {
+		t.Fail()
+		return
+	}
+	if IsInSameYear(ParseToTime(DefaultDateLayout, "2022-10-20"), ParseToTime(DefaultDateLayout, "2022-10-13")) != true {
+		t.Fail()
+		return
+	}
+	if IsInSameYear(ParseToTime(DefaultDateLayout, "2022-11-21"), ParseToTime(DefaultDateLayout, "2022-10-13")) != true {
+		t.Fail()
+		return
+	}
+	if IsInSameYear(ParseToTime(DefaultYearLayout, "2022"), ParseToTime(DefaultYearLayout, "2022")) != true {
+		t.Fail()
+		return
+	}
+	if IsInSameYear(ParseToTime(DefaultYearLayout, "2022"), ParseToTime(DefaultYearLayout, "2023")) != false {
+		t.Fail()
+		return
+	}
+	if IsInSameYear(ParseToTime(DefaultMonthLayout, "2023-01"), ParseToTime(DefaultDateLayout, "2023-01-10"), ParseToTime(DefaultYearLayout, "2023")) != true {
+		t.Fail()
+		return
+	}
+}
+
+// TestIsInSameMonth test the IsInSameMonth function.
+func TestIsInSameMonth(t *testing.T) {
+	if IsInSameMonth() != true {
+		t.Fail()
+		return
+	}
+	if IsInSameMonth(ParseToTime(DefaultDateLayout, "2022-10-20"), ParseToTime(DefaultDateLayout, "2022-10-13")) != true {
+		t.Fail()
+		return
+	}
+	if IsInSameMonth(ParseToTime(DefaultDateLayout, "2022-11-21"), ParseToTime(DefaultDateLayout, "2022-10-13")) != false {
+		t.Fail()
+		return
+	}
+	if IsInSameMonth(ParseToTime(DefaultYearLayout, "2022"), ParseToTime(DefaultYearLayout, "2022")) != true {
+		t.Fail()
+		return
+	}
+	if IsInSameMonth(ParseToTime(DefaultYearLayout, "2022"), ParseToTime(DefaultYearLayout, "2023")) != false {
+		t.Fail()
+		return
+	}
+	if IsInSameMonth(ParseToTime(DefaultMonthLayout, "2023-01"), ParseToTime(DefaultDateLayout, "2023-01-10"), ParseToTime(DefaultYearLayout, "2023")) != true {
+		t.Fail()
+		return
+	}
+}
+
+// TestIsInSameDay test the IsInSameDay function.
+func TestIsInSameDay(t *testing.T) {
+	if IsInSameDay() != true {
+		t.Fail()
+		return
+	}
+	if IsInSameDay(ParseToTime(DefaultDateLayout, "2022-10-13"), ParseToTime(DefaultDateLayout, "2022-10-13")) != true {
+		t.Fail()
+		return
+	}
+	if IsInSameDay(ParseToTime(DefaultDateLayout, "2022-11-21"), ParseToTime(DefaultDateLayout, "2022-10-13")) != false {
+		t.Fail()
+		return
+	}
+	if IsInSameDay(ParseToTime(DefaultYearLayout, "2022"), ParseToTime(DefaultYearLayout, "2023")) != false {
+		t.Fail()
+		return
+	}
+	if IsInSameDay(ParseToTime(DefaultMonthLayout, "2023-01"), ParseToTime(DefaultDateLayout, "2023-01-10"), ParseToTime(DefaultYearLayout, "2023")) != false {
+		t.Fail()
+		return
+	}
+	if IsInSameDay(ParseToTime(DefaultMonthLayout, "2023-01"), ParseToTime(DefaultDateLayout, "2023-01-01"), ParseToTime(DefaultYearLayout, "2023")) != true {
+		t.Fail()
+		return
+	}
+}
+
+// TestIsInValidTimeRange test the IsInValidTimeRange function.
+func TestIsInValidTimeRange(t *testing.T) {
+	if IsInValidTimeRange(ParseToTime(DefaultDateLayout, "2022-10-12"), ParseToTime(DefaultDateLayout, "2022-10-13"), 0) != false {
+		t.Fail()
+		return
+	}
+	if IsInValidTimeRange(ParseToTime(DefaultDateLayout, "2022-10-12"), ParseToTime(DefaultDateLayout, "2022-10-13"), 1) != true {
+		t.Fail()
+		return
+	}
+	if IsInValidTimeRange(ParseToTime(DefaultDateLayout, "2022-10-12"), ParseToTime(DefaultDateLayout, "2022-10-13"), 2) != true {
+		t.Fail()
+		return
+	}
+	if IsInValidTimeRange(ParseToTime(DefaultDateLayout, "2022-10-12"), ParseToTime(DefaultDateLayout, "2022-10-15"), 2) != false {
+		t.Fail()
+		return
+	}
+	if IsInValidTimeRange(ParseToTime(DefaultDateLayout, "2022-10-12"), ParseToTime(DefaultDateLayout, "2022-10-15"), 2) != false {
+		t.Fail()
+		return
+	}
+	if IsInValidTimeRange(ParseToTime(DefaultDateLayout, "2022-10-12"), ParseToTime(DefaultDateLayout, "2022-10-15"), 3) != true {
 		t.Fail()
 		return
 	}

@@ -21,3 +21,29 @@ func ToFixedFloat64(value float64, format string) (float64, error) {
 	}
 	return fixedFloat, nil
 }
+
+// ReverseNum Reverse The number.
+// 121 => 121
+// -152 => -251
+func ReverseNum(x int) int {
+	var (
+		bit  int
+		newX int
+	)
+	for x != 0 {
+		var mod = x % 10
+		x = x / 10
+
+		// This is error, will appear 121 => 1201
+		// newX = ( newX * int(math.Pow(10, float64(bit))) ) + mod
+
+		if bit == 0 {
+			newX = mod
+		} else {
+			newX = (newX * 10) + mod
+		}
+
+		bit++
+	}
+	return newX
+}

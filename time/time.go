@@ -14,6 +14,7 @@ import (
 // Default constants
 const (
 	DefaultLayout      = "2006-01-02 15:04:05"
+	DefaultYearLayout  = "2006"
 	DefaultDateLayout  = "2006-01-02"
 	DefaultMonthLayout = "2006-01"
 	DefaultTimeLayout  = "15:04:05"
@@ -168,4 +169,54 @@ func GetYearMonthBetweenTime(startTime, endTime sdtime.Time) ([]string, error) {
 	}
 
 	return s, nil
+}
+
+// ParseToTime returns the Time object of input.
+func ParseToTime(layout, value string) sdtime.Time {
+	t, _ := sdtime.Parse(layout, value)
+	return t
+}
+
+// IsInSameYear returns a boolean value indicating whether these times are in the same year.
+func IsInSameYear(timeList ...sdtime.Time) bool {
+	if len(timeList) <= 0 {
+		return true
+	}
+	for i := 1; i <= len(timeList)-1; i++ {
+		if timeList[i].Year() != timeList[0].Year() {
+			return false
+		}
+	}
+	return true
+}
+
+// IsInSameMonth returns a boolean value indicating whether these times are in the same month.
+func IsInSameMonth(timeList ...sdtime.Time) bool {
+	if len(timeList) <= 0 {
+		return true
+	}
+	for i := 1; i <= len(timeList)-1; i++ {
+		if timeList[i].Year() != timeList[0].Year() || timeList[i].Month() != timeList[0].Month() {
+			return false
+		}
+	}
+	return true
+}
+
+// IsInSameDay returns a boolean value indicating whether these times are in the same day.
+func IsInSameDay(timeList ...sdtime.Time) bool {
+	if len(timeList) <= 0 {
+		return true
+	}
+	for i := 1; i <= len(timeList)-1; i++ {
+		if timeList[i].Year() != timeList[0].Year() || timeList[i].Month() != timeList[0].Month() || timeList[i].Day() != timeList[0].Day() {
+			return false
+		}
+	}
+	return true
+}
+
+// IsInValidTimeRange return a boolean value indicating whether the two times are in target days.
+func IsInValidTimeRange(startTime sdtime.Time, endTime sdtime.Time, days int) bool {
+	return (endTime.Unix()-startTime.Unix()) > 0 && (endTime.Unix()-startTime.Unix()) <= int64(days*86400)
 }
