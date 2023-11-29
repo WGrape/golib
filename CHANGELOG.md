@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.4.0](https://github.com/WGrape/golib/compare/v1.3.0...v1.4.0) (2023-11-29)
+
+
+### Features
+
+* add binary package ([aa57e5c](https://github.com/WGrape/golib/commit/aa57e5cd3674b68db5132777c68cf444cbc4fa43))
+* add binary package ([765cbbf](https://github.com/WGrape/golib/commit/765cbbf34339a9e9fb14b02535c49ec9dbdc09bb))
+* add PopOneInt function ([1130dd2](https://github.com/WGrape/golib/commit/1130dd29b9425acb8d004f762c5328e11eb1d0ef))
+* add rand package ([9c50adb](https://github.com/WGrape/golib/commit/9c50adb18660c37243766db4e06c9321a331de88))
+* add ReverseNum function ([1dced63](https://github.com/WGrape/golib/commit/1dced632f5b09ee323cd74b1ff164cb89152e879))
+* add subsets function ([aeef86a](https://github.com/WGrape/golib/commit/aeef86aac16b73af62076aa2037f70b873cf9a6f))
+
+
+### Bug Fixes
+
+* fix the DecimalNumberToBinary function ([ac593f8](https://github.com/WGrape/golib/commit/ac593f8dc1db7c822877484a976f7a6f9c806d79))
+
+
+### Styling
+
+* add comment ([0f6a82e](https://github.com/WGrape/golib/commit/0f6a82ed6a21da5b6ac9eb4ff9b569b82ae7fdd7))
+
 ## [1.3.0](https://github.com/WGrape/golib/compare/v1.2.0...v1.3.0) (2023-04-09)
 
 
